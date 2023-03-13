@@ -335,7 +335,7 @@ executeChecksSingleIngredient <- function(cdm,
     tables <- CDMConnector::listTables(attr(cdm, "dbcon"),
                                        schema = attr(cdm, "write_schema"))
     tables <- tables[grepl(tablePrefix, tables)]
-    dropTables(cdm, tables, verbose)
+    CDMConnector::dropTable(cdm, tables, verbose)
   }
 
   if (verbose == TRUE) {

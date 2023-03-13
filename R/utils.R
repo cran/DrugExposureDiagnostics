@@ -230,47 +230,6 @@ computeDBQuery <- function(table, tablePrefix, tableName, cdm, overwrite = TRUE)
   return(table)
 }
 
-#' Drop tables from write_schema of a cdm object
-#'
-#' cdm objects can have zero or more tables stored in a special schema
-#' where the user has write access. This function removes tables from a cdm's
-#' write_schema
-#'
-#'
-#' @param cdm A cdm reference
-#' @param name A character vector of tables in the cdm's write_schema
-#' @param verbose Print a message when dropping a table? TRUE or FALSE (default)
-#'
-#' @return Invisibly returns the cdm object
-dropTables <- function(cdm, name, verbose = FALSE) {
-
-  checkmate::assertClass(cdm, "cdm_reference")
-  checkmate::assertCharacter(name, min.chars = 1, min.len = 1,  max.len = 1e5)
-  schema <- attr(cdm, "write_schema")
-  checkmate::assertCharacter(schema, min.chars = 1, min.len = 1, max.len = 2)
-  con <- attr(cdm, "dbcon")
-  checkmate::assertTRUE(DBI::dbIsValid(con))
-
-  allTables <- CDMConnector::listTables(con, schema = schema)
-
-  for (i in seq_along(name)) {
-    if (name[i] %in% allTables) {
-      if (verbose) {
-        message(paste0("Dropping ", schema, ".", name[i]))
-      }
-      DBI::dbRemoveTable(con,
-                         DBI::SQL(paste0(c(schema,
-                                           name[[i]]),
-                                         collapse = ".")))
-    }
-    if (name[i] %in% names(cdm)) {
-      cdm[[name[i]]] <- NULL
-    }
-  }
-
-  return(invisible(cdm))
-}
-
 #' Write diagnostics results to a zip file on disk in given output folder.
 #'
 #' @param resultList named list with results
