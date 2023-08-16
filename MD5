@@ -1,6 +1,6 @@
-f30d0c7ffc203a597fc49271e33c2a68 *DESCRIPTION
+403241e3ab5698820882c73b3d96ed56 *DESCRIPTION
 f3520ef9934e343a8c7d44a9d15229e4 *NAMESPACE
-07620f553cf08994d5e74f49564b88ac *NEWS.md
+db85f76cd6f0b5b55d83dd312624ab57 *NEWS.md
 61c3098cb43bd8640855a3f1641bcac7 *R/DrugExposureDiagnostics-package.R
 88e6877851c8a3be0c8444998f39995d *R/checkDaysSupply.R
 8dff794cd5b8f259af479dc0ab8b8fc4 *R/checkDrugDose.R
@@ -14,8 +14,8 @@ d45650f2efb63fa4db56038c36044b11 *R/getDrugRecords.R
 7c76c70e6ba39a678767903bfff87cbd *R/globals.R
 7b403f6bec8a7a4c7147df6da00f1057 *R/histogram.R
 6e00fc612115cf22b6d56491123797ae *R/ingredientDescendantsInDb.R
-3085d58c28d98f2c52af558d586f8ce2 *R/mockDrugExposure.R
-cd5b8e04b442f11d1e8731a8e6b87abe *R/obscureCounts.R
+8ef6f1f89b850c818310b4e7f38a4c03 *R/mockDrugExposure.R
+f4c6960856fccf9c367871f16ac6e9ad *R/obscureCounts.R
 41d2cf9a04f2f7513e3a1747c6a11e61 *R/summariseChecks.R
 961be09655e1d4e5cece5cc4602b5c9f *R/summariseQuantity.R
 b56ff2b193ecba52f9ec7f3b10cca008 *R/utils-pipe.R
@@ -24,10 +24,10 @@ acd45ceeefaf7eef4dc9668ae8db38c4 *R/utils.R
 8252f687b0b501e2efa4404c18a978e5 *build/vignette.rds
 3ee1c60cd3f2c173b69a847cbda06b65 *inst/doc/Introduction_to_DrugExposureDiagnostics.R
 ebb58de42af88c8489813c8aa4d5aea4 *inst/doc/Introduction_to_DrugExposureDiagnostics.Rmd
-5d376ee9fa939ea93faa5e6dab42fd84 *inst/doc/Introduction_to_DrugExposureDiagnostics.html
+b2481e675a628fdb6b39e42aa7a260b0 *inst/doc/Introduction_to_DrugExposureDiagnostics.html
 3bfeb53d42953f60cb9787d90a588f8e *inst/doc/Summary_of_checks.R
 dacc886d317d9f67edd1f5c6ebf1bb18 *inst/doc/Summary_of_checks.Rmd
-57c52a52522dd367ecb6e4dcd2e51cfb *inst/doc/Summary_of_checks.html
+58fd3dca8256c569f88e429db4260bec *inst/doc/Summary_of_checks.html
 df15193d9d50578fc784099aebb5ad90 *man/DrugExposureDiagnostics-package.Rd
 0625e2bc362352ed73815f1cd56bc6e6 *man/checkDaysSupply.Rd
 10f4bd5801bfa8d374ed6d42925d6f34 *man/checkDbType.Rd
@@ -71,7 +71,7 @@ b1c5da28d6de9c0b151d6869d5d8672c *tests/testthat/test-Eunomia.R
 5b88d0d1546a47ee7e02d035b1142423 *tests/testthat/test-GetDrugMissings.R
 b99026bdd43ffb9ba50a7611b5b0063d *tests/testthat/test-IngredientOverview.R
 3802885ae9c277660129f072cf5dcfa9 *tests/testthat/test-MockDrugExposureData.R
-f456d00c4d62f812aa03adda0ed989d9 *tests/testthat/test-ObscureCounts.R
+f4c2a7fe2593cefa73eadee1d4dbf6db *tests/testthat/test-ObscureCounts.R
 d10ef88349da494f0eb9f6ab579a49cd *tests/testthat/test-SummariseChecks.R
 40852cc73eaba6140320bd92e5f92ea3 *tests/testthat/test-SummariseQuantity.R
 b5f452f861a3b62f2bf8f351a29a15e1 *tests/testthat/test-SyntheaSqlServer.R
@@ -81,3 +81,4 @@ f5023123e64425161eb4a06a9fb58227 *tests/testthat/test-checkDaysSupply.R
 32a93c47cf4b75eea4712fd9ed77bb36 *tests/testthat/test-utils.R
 ebb58de42af88c8489813c8aa4d5aea4 *vignettes/Introduction_to_DrugExposureDiagnostics.Rmd
 dacc886d317d9f67edd1f5c6ebf1bb18 *vignettes/Summary_of_checks.Rmd
+786b5ee55b2b10f501921bdd3f964d1a *vignettes/articles/PareReport.Rmd

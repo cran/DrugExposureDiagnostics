@@ -1,5 +1,12 @@
 # DrugExposureDiagnostics (development version)
 
+# DrugExposureDiagnostics 0.4.6
+* Fixed bug in obscureCounts
+* Add PaRe report vignette
+
+# DrugExposureDiagnostics 0.4.5
+* Fixed bug in obscureCounts
+
 # DrugExposureDiagnostics 0.4.4
 
 * Fixed bug when running subset of checks
