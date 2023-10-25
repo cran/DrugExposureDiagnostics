@@ -366,12 +366,12 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="co">#&gt; $ n_patients                                                &lt;int&gt; 1740</span></span>
 <span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="co">#&gt; $ proportion_of_records_by_drug_type                        &lt;chr&gt; &quot;NA (2470, 1…</span></span>
 <span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="co">#&gt; $ proportion_of_records_by_route_type                       &lt;chr&gt; &quot;No matching…</span></span>
-<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a><span class="co">#&gt; $ proportion_of_records_with_dose_form                      &lt;chr&gt; &quot;0 (0%)&quot;</span></span>
-<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a><span class="co">#&gt; $ proportion_of_records_missing_denominator_unit_concept_id &lt;chr&gt; &quot;0 (0%)&quot;</span></span>
-<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a><span class="co">#&gt; $ median_amount_value_q05_q95                               &lt;chr&gt; &quot;1 (1-1) [0,…</span></span>
-<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a><span class="co">#&gt; $ median_quantity_q05_q95                                   &lt;chr&gt; &quot;0 (0-0) [24…</span></span>
-<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a><span class="co">#&gt; $ median_drug_exposure_days_q05_q95                         &lt;chr&gt; &quot;15 (1-68) […</span></span>
-<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a><span class="co">#&gt; $ proportion_of_records_with_negative_drug_exposure_days    &lt;chr&gt; &quot;0 (0%)&quot;</span></span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a><span class="co">#&gt; $ proportion_of_records_with_dose_form                      &lt;glue&gt; &quot;0 (0%)&quot;</span></span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a><span class="co">#&gt; $ proportion_of_records_missing_denominator_unit_concept_id &lt;glue&gt; &quot;0 (0%)&quot;</span></span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a><span class="co">#&gt; $ median_amount_value_q05_q95                               &lt;glue&gt; &quot;1 (1-1) [0,…</span></span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a><span class="co">#&gt; $ median_quantity_q05_q95                                   &lt;glue&gt; &quot;0 (0-0) [24…</span></span>
+<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a><span class="co">#&gt; $ median_drug_exposure_days_q05_q95                         &lt;glue&gt; &quot;15 (1-68) […</span></span>
+<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a><span class="co">#&gt; $ proportion_of_records_with_negative_drug_exposure_days    &lt;glue&gt; &quot;0 (0%)&quot;</span></span>
 <span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a><span class="co">#&gt; $ result_obscured                                           &lt;lgl&gt; FALSE</span></span></code></pre></div>
 <table>
 <colgroup>
@@ -635,15 +635,15 @@ the minimum cell count, otherwise FALSE.</td>
 <span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="co">#&gt; Rows: 36</span></span>
 <span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="co">#&gt; Columns: 10</span></span>
 <span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="co">#&gt; Rowwise: drug_concept_id, drug, ingredient_concept_id, ingredient</span></span>
-<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="co">#&gt; $ drug_concept_id                  &lt;int&gt; 40162522, 40162522, 40162522, 4016252…</span></span>
-<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="co">#&gt; $ drug                             &lt;chr&gt; &quot;Acetaminophen 325 MG / Hydrocodone B…</span></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="co">#&gt; $ drug_concept_id                  &lt;int&gt; 1127078, 1127078, 1127078, 1127078, 1…</span></span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="co">#&gt; $ drug                             &lt;chr&gt; &quot;Acetaminophen 160 MG Oral Tablet&quot;, &quot;…</span></span>
 <span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="co">#&gt; $ ingredient_concept_id            &lt;dbl&gt; 1125315, 1125315, 1125315, 1125315, 1…</span></span>
 <span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="co">#&gt; $ ingredient                       &lt;chr&gt; &quot;Acetaminophen&quot;, &quot;Acetaminophen&quot;, &quot;Ac…</span></span>
 <span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a><span class="co">#&gt; $ variable                         &lt;chr&gt; &quot;n_missing_drug_exposure_start_date&quot;,…</span></span>
-<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a><span class="co">#&gt; $ n_records                        &lt;int&gt; 312, 312, 312, 312, 312, 312, 312, 31…</span></span>
-<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="co">#&gt; $ n_records_not_missing_value      &lt;dbl&gt; 312, 312, 0, 312, 0, 312, 312, 312, 0…</span></span>
-<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a><span class="co">#&gt; $ n_records_missing_value          &lt;dbl&gt; 0, 0, 312, 0, 312, 0, 0, 0, 312, 0, 0…</span></span>
-<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a><span class="co">#&gt; $ proportion_records_missing_value &lt;dbl&gt; 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0…</span></span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a><span class="co">#&gt; $ n_records                        &lt;int&gt; 2158, 2158, 2158, 2158, 2158, 2158, 2…</span></span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="co">#&gt; $ n_records_not_missing_value      &lt;dbl&gt; 2158, 2158, 2158, 2158, 0, 2158, 2158…</span></span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a><span class="co">#&gt; $ n_records_missing_value          &lt;dbl&gt; 0, 0, 0, 0, 2158, 0, 0, 0, 2158, 0, 0…</span></span>
+<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a><span class="co">#&gt; $ proportion_records_missing_value &lt;dbl&gt; 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0…</span></span>
 <span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a><span class="co">#&gt; $ result_obscured                  &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FA…</span></span></code></pre></div>
 <table>
 <colgroup>
@@ -918,13 +918,13 @@ the minimum cell count, otherwise FALSE.</td>
 <span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="co">#&gt; Rows: 2</span></span>
 <span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="co">#&gt; Columns: 8</span></span>
 <span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a><span class="co">#&gt; Rowwise: drug_concept_id, drug, ingredient_concept_id, ingredient</span></span>
-<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a><span class="co">#&gt; $ drug_concept_id       &lt;int&gt; 40162522, 1127078</span></span>
-<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a><span class="co">#&gt; $ drug                  &lt;chr&gt; &quot;Acetaminophen 325 MG / Hydrocodone Bitartrate 7…</span></span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a><span class="co">#&gt; $ drug_concept_id       &lt;int&gt; 1127078, 40162522</span></span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a><span class="co">#&gt; $ drug                  &lt;chr&gt; &quot;Acetaminophen 160 MG Oral Tablet&quot;, &quot;Acetaminoph…</span></span>
 <span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a><span class="co">#&gt; $ ingredient_concept_id &lt;dbl&gt; 1125315, 1125315</span></span>
 <span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a><span class="co">#&gt; $ ingredient            &lt;chr&gt; &quot;Acetaminophen&quot;, &quot;Acetaminophen&quot;</span></span>
 <span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a><span class="co">#&gt; $ drug_type_concept_id  &lt;int&gt; 38000177, 38000177</span></span>
 <span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a><span class="co">#&gt; $ drug_type             &lt;chr&gt; NA, NA</span></span>
-<span id="cb7-12"><a href="#cb7-12" tabindex="-1"></a><span class="co">#&gt; $ n_records             &lt;int&gt; 312, 2158</span></span>
+<span id="cb7-12"><a href="#cb7-12" tabindex="-1"></a><span class="co">#&gt; $ n_records             &lt;int&gt; 2158, 312</span></span>
 <span id="cb7-13"><a href="#cb7-13" tabindex="-1"></a><span class="co">#&gt; $ result_obscured       &lt;lgl&gt; FALSE, FALSE</span></span></code></pre></div>
 <table>
 <colgroup>
@@ -982,13 +982,13 @@ the minimum cell count, otherwise FALSE.</td>
 <span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="co">#&gt; Rows: 2</span></span>
 <span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="co">#&gt; Columns: 8</span></span>
 <span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a><span class="co">#&gt; Rowwise: drug_concept_id, drug, ingredient_concept_id, ingredient</span></span>
-<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a><span class="co">#&gt; $ drug_concept_id       &lt;int&gt; 1127078, 40162522</span></span>
-<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a><span class="co">#&gt; $ drug                  &lt;chr&gt; &quot;Acetaminophen 160 MG Oral Tablet&quot;, &quot;Acetaminoph…</span></span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a><span class="co">#&gt; $ drug_concept_id       &lt;int&gt; 40162522, 1127078</span></span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a><span class="co">#&gt; $ drug                  &lt;chr&gt; &quot;Acetaminophen 325 MG / Hydrocodone Bitartrate 7…</span></span>
 <span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a><span class="co">#&gt; $ ingredient_concept_id &lt;dbl&gt; 1125315, 1125315</span></span>
 <span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a><span class="co">#&gt; $ ingredient            &lt;chr&gt; &quot;Acetaminophen&quot;, &quot;Acetaminophen&quot;</span></span>
 <span id="cb8-10"><a href="#cb8-10" tabindex="-1"></a><span class="co">#&gt; $ route_concept_id      &lt;int&gt; 0, 0</span></span>
 <span id="cb8-11"><a href="#cb8-11" tabindex="-1"></a><span class="co">#&gt; $ route_type            &lt;chr&gt; &quot;No matching concept&quot;, &quot;No matching concept&quot;</span></span>
-<span id="cb8-12"><a href="#cb8-12" tabindex="-1"></a><span class="co">#&gt; $ n_records             &lt;int&gt; 2158, 312</span></span>
+<span id="cb8-12"><a href="#cb8-12" tabindex="-1"></a><span class="co">#&gt; $ n_records             &lt;int&gt; 312, 2158</span></span>
 <span id="cb8-13"><a href="#cb8-13" tabindex="-1"></a><span class="co">#&gt; $ result_obscured       &lt;lgl&gt; FALSE, FALSE</span></span></code></pre></div>
 <table>
 <colgroup>
@@ -1110,16 +1110,16 @@ the minimum cell count, otherwise FALSE.</td>
 <span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="co">#&gt; Rows: 2</span></span>
 <span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a><span class="co">#&gt; Columns: 12</span></span>
 <span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a><span class="co">#&gt; Rowwise: drug_concept_id, drug, ingredient_concept_id</span></span>
-<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a><span class="co">#&gt; $ drug_concept_id                                       &lt;int&gt; 40162522, 1127078</span></span>
-<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a><span class="co">#&gt; $ drug                                                  &lt;chr&gt; &quot;Acetaminophen 3…</span></span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a><span class="co">#&gt; $ drug_concept_id                                       &lt;int&gt; 1127078, 40162522</span></span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a><span class="co">#&gt; $ drug                                                  &lt;chr&gt; &quot;Acetaminophen 1…</span></span>
 <span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a><span class="co">#&gt; $ ingredient_concept_id                                 &lt;dbl&gt; 1125315, 1125315</span></span>
 <span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a><span class="co">#&gt; $ ingredient                                            &lt;chr&gt; &quot;Acetaminophen&quot;,…</span></span>
-<span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a><span class="co">#&gt; $ minimum_verbatim_end_date                             &lt;dbl&gt; NA, -7268</span></span>
-<span id="cb10-11"><a href="#cb10-11" tabindex="-1"></a><span class="co">#&gt; $ maximum_verbatim_end_date                             &lt;dbl&gt; NA, 9421</span></span>
-<span id="cb10-12"><a href="#cb10-12" tabindex="-1"></a><span class="co">#&gt; $ n_records                                             &lt;int&gt; 312, 2158</span></span>
-<span id="cb10-13"><a href="#cb10-13" tabindex="-1"></a><span class="co">#&gt; $ n_missing_verbatim_end_date                           &lt;dbl&gt; 312, 0</span></span>
-<span id="cb10-14"><a href="#cb10-14" tabindex="-1"></a><span class="co">#&gt; $ n_not_missing_verbatim_end_date                       &lt;int&gt; 0, 2158</span></span>
-<span id="cb10-15"><a href="#cb10-15" tabindex="-1"></a><span class="co">#&gt; $ n_verbatim_end_date_equal_to_drug_exposure_end_date   &lt;int&gt; 312, 2158</span></span>
+<span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a><span class="co">#&gt; $ minimum_verbatim_end_date                             &lt;dbl&gt; -7268, NA</span></span>
+<span id="cb10-11"><a href="#cb10-11" tabindex="-1"></a><span class="co">#&gt; $ maximum_verbatim_end_date                             &lt;dbl&gt; 9421, NA</span></span>
+<span id="cb10-12"><a href="#cb10-12" tabindex="-1"></a><span class="co">#&gt; $ n_records                                             &lt;int&gt; 2158, 312</span></span>
+<span id="cb10-13"><a href="#cb10-13" tabindex="-1"></a><span class="co">#&gt; $ n_missing_verbatim_end_date                           &lt;dbl&gt; 0, 312</span></span>
+<span id="cb10-14"><a href="#cb10-14" tabindex="-1"></a><span class="co">#&gt; $ n_not_missing_verbatim_end_date                       &lt;int&gt; 2158, 0</span></span>
+<span id="cb10-15"><a href="#cb10-15" tabindex="-1"></a><span class="co">#&gt; $ n_verbatim_end_date_equal_to_drug_exposure_end_date   &lt;int&gt; 2158, 312</span></span>
 <span id="cb10-16"><a href="#cb10-16" tabindex="-1"></a><span class="co">#&gt; $ n_verbatim_end_date_and_drug_exposure_end_date_differ &lt;dbl&gt; 0, 0</span></span>
 <span id="cb10-17"><a href="#cb10-17" tabindex="-1"></a><span class="co">#&gt; $ result_obscured                                       &lt;lgl&gt; FALSE, FALSE</span></span></code></pre></div>
 <table>
@@ -1404,12 +1404,12 @@ the minimum cell count, otherwise FALSE.</td>
 <span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a><span class="co">#&gt; Rows: 2</span></span>
 <span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a><span class="co">#&gt; Columns: 7</span></span>
 <span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a><span class="co">#&gt; Rowwise: drug_concept_id, drug, ingredient_concept_id, ingredient</span></span>
-<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a><span class="co">#&gt; $ drug_concept_id       &lt;int&gt; 1127078, 40162522</span></span>
-<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a><span class="co">#&gt; $ drug                  &lt;chr&gt; &quot;Acetaminophen 160 MG Oral Tablet&quot;, &quot;Acetaminoph…</span></span>
+<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a><span class="co">#&gt; $ drug_concept_id       &lt;int&gt; 40162522, 1127078</span></span>
+<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a><span class="co">#&gt; $ drug                  &lt;chr&gt; &quot;Acetaminophen 325 MG / Hydrocodone Bitartrate 7…</span></span>
 <span id="cb12-8"><a href="#cb12-8" tabindex="-1"></a><span class="co">#&gt; $ ingredient_concept_id &lt;dbl&gt; 1125315, 1125315</span></span>
 <span id="cb12-9"><a href="#cb12-9" tabindex="-1"></a><span class="co">#&gt; $ ingredient            &lt;chr&gt; &quot;Acetaminophen&quot;, &quot;Acetaminophen&quot;</span></span>
 <span id="cb12-10"><a href="#cb12-10" tabindex="-1"></a><span class="co">#&gt; $ sig                   &lt;chr&gt; NA, NA</span></span>
-<span id="cb12-11"><a href="#cb12-11" tabindex="-1"></a><span class="co">#&gt; $ n_records             &lt;int&gt; 2158, 312</span></span>
+<span id="cb12-11"><a href="#cb12-11" tabindex="-1"></a><span class="co">#&gt; $ n_records             &lt;int&gt; 312, 2158</span></span>
 <span id="cb12-12"><a href="#cb12-12" tabindex="-1"></a><span class="co">#&gt; $ result_obscured       &lt;lgl&gt; FALSE, FALSE</span></span></code></pre></div>
 <table>
 <colgroup>
@@ -1559,14 +1559,14 @@ the minimum cell count, otherwise FALSE.</td>
 <span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a><span class="co">#&gt; Rowwise: </span></span>
 <span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a><span class="co">#&gt; $ ingredient_concept_id &lt;dbl&gt; 1125315, 1125315, 1125315, 1125315, 1125315, 112…</span></span>
 <span id="cb14-7"><a href="#cb14-7" tabindex="-1"></a><span class="co">#&gt; $ ingredient            &lt;chr&gt; &quot;Acetaminophen&quot;, &quot;Acetaminophen&quot;, &quot;Acetaminophen…</span></span>
-<span id="cb14-8"><a href="#cb14-8" tabindex="-1"></a><span class="co">#&gt; $ drug_exposure_days    &lt;dbl&gt; 68, 15, NA, NA, NA, NA, 61, 29, 22, NA, NA, 38, …</span></span>
-<span id="cb14-9"><a href="#cb14-9" tabindex="-1"></a><span class="co">#&gt; $ days_supply           &lt;int&gt; 67, 14, NA, NA, NA, NA, 60, 28, 21, NA, NA, 37, …</span></span>
-<span id="cb14-10"><a href="#cb14-10" tabindex="-1"></a><span class="co">#&gt; $ quantity              &lt;dbl&gt; 0, 0, NA, NA, NA, NA, 0, 0, 0, NA, NA, 0, 0, 0, …</span></span>
+<span id="cb14-8"><a href="#cb14-8" tabindex="-1"></a><span class="co">#&gt; $ drug_exposure_days    &lt;dbl&gt; 38, 31, 91, NA, NA, 61, NA, NA, 68, 1, 36, NA, N…</span></span>
+<span id="cb14-9"><a href="#cb14-9" tabindex="-1"></a><span class="co">#&gt; $ days_supply           &lt;int&gt; 37, 30, 90, NA, NA, 60, NA, NA, 67, 0, 35, NA, N…</span></span>
+<span id="cb14-10"><a href="#cb14-10" tabindex="-1"></a><span class="co">#&gt; $ quantity              &lt;dbl&gt; 0, 0, 0, NA, NA, 0, NA, NA, 0, 0, 0, NA, NA, NA,…</span></span>
 <span id="cb14-11"><a href="#cb14-11" tabindex="-1"></a><span class="co">#&gt; $ sig                   &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …</span></span>
 <span id="cb14-12"><a href="#cb14-12" tabindex="-1"></a><span class="co">#&gt; $ strength              &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …</span></span>
-<span id="cb14-13"><a href="#cb14-13" tabindex="-1"></a><span class="co">#&gt; $ n_records             &lt;int&gt; 12, 1360, NA, NA, NA, NA, 96, 103, 218, NA, NA, …</span></span>
-<span id="cb14-14"><a href="#cb14-14" tabindex="-1"></a><span class="co">#&gt; $ n_people              &lt;int&gt; 12, 1043, NA, NA, NA, NA, 96, 98, 209, NA, NA, 1…</span></span>
-<span id="cb14-15"><a href="#cb14-15" tabindex="-1"></a><span class="co">#&gt; $ result_obscured       &lt;lgl&gt; FALSE, FALSE, TRUE, TRUE, TRUE, TRUE, FALSE, FAL…</span></span></code></pre></div>
+<span id="cb14-13"><a href="#cb14-13" tabindex="-1"></a><span class="co">#&gt; $ n_records             &lt;int&gt; 11, 116, 117, NA, NA, 96, NA, NA, 12, 312, 110, …</span></span>
+<span id="cb14-14"><a href="#cb14-14" tabindex="-1"></a><span class="co">#&gt; $ n_people              &lt;int&gt; 11, 113, 114, NA, NA, 96, NA, NA, 12, 312, 108, …</span></span>
+<span id="cb14-15"><a href="#cb14-15" tabindex="-1"></a><span class="co">#&gt; $ result_obscured       &lt;lgl&gt; FALSE, FALSE, FALSE, TRUE, TRUE, FALSE, TRUE, TR…</span></span></code></pre></div>
 <table>
 <colgroup>
 <col width="50%" />

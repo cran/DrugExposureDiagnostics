@@ -19,7 +19,7 @@ cdm <- getEunomiaCdm()
 #                checks = c("missing", "exposureDuration", "type", "route", "sourceConcept", "daysSupply", "verbatimEndDate",
 #                           "dose", "sig", "quantity", "ingredientOverview", "ingredientPresence", "histogram", "diagnosticsSummary"),
 #                minCellCount = 5,
-#                sample = 1000000,
+#                sample = 10000,
 #                verbose = FALSE
 #  )
 
