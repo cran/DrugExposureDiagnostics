@@ -1,6 +1,6 @@
-4f093e4f23b71e238528950f599a8f64 *DESCRIPTION
+d4161443fef8844d65d79ab69b646f34 *DESCRIPTION
 f3520ef9934e343a8c7d44a9d15229e4 *NAMESPACE
-70343b0ded496c07dc81748af41fffb2 *NEWS.md
+8cc71ab981b4a57b4fabe862df96dc7b *NEWS.md
 61c3098cb43bd8640855a3f1641bcac7 *R/DrugExposureDiagnostics-package.R
 88e6877851c8a3be0c8444998f39995d *R/checkDaysSupply.R
 8dff794cd5b8f259af479dc0ab8b8fc4 *R/checkDrugDose.R
@@ -8,7 +8,7 @@ d5d3edb7de11b27c0bbb6de25012eb8a *R/checkDrugSig.R
 52c55ad960d8e7ac497c51d1e0b785a0 *R/checkVerbatimEndDate.R
 75479c82cfc4d752d84b510585d98798 *R/drugRecordChecks.R
 6b463043b09456682778606b0c9a0796 *R/executeChecks.R
-4e0e013d702e2e54593cc5a696854c29 *R/getDrugRecords.R
+e62345503ce1781e5cad9fcfd8a6ff75 *R/getDrugRecords.R
 2704f73810fc3fa1385b188c9d4c8f40 *R/getDrugStrength.R
 f937cebfc2bf510b2f25ea073fac1c28 *R/getIngredientsOverview.R
 7c76c70e6ba39a678767903bfff87cbd *R/globals.R
@@ -24,10 +24,10 @@ acd45ceeefaf7eef4dc9668ae8db38c4 *R/utils.R
 8252f687b0b501e2efa4404c18a978e5 *build/vignette.rds
 a42991f66535ee08341a68cf15cf8164 *inst/doc/Introduction_to_DrugExposureDiagnostics.R
 61f41dadfe58d801f29d6ec6870660cf *inst/doc/Introduction_to_DrugExposureDiagnostics.Rmd
-8f86c8a6666853dd3c47ef99af7fd430 *inst/doc/Introduction_to_DrugExposureDiagnostics.html
+d99411562c56de8b7c6cfe0a844e0399 *inst/doc/Introduction_to_DrugExposureDiagnostics.html
 2db0ddeff5768e623b09653038dcd3fc *inst/doc/Summary_of_checks.R
 68eb7cc65b20b837b1e58e90249f374b *inst/doc/Summary_of_checks.Rmd
-3ca426866222e985a7f756befaa2a3fa *inst/doc/Summary_of_checks.html
+99f96b4e8155ddd77d7928e64bb47ba1 *inst/doc/Summary_of_checks.html
 df15193d9d50578fc784099aebb5ad90 *man/DrugExposureDiagnostics-package.Rd
 0625e2bc362352ed73815f1cd56bc6e6 *man/checkDaysSupply.Rd
 10f4bd5801bfa8d374ed6d42925d6f34 *man/checkDbType.Rd
@@ -69,7 +69,7 @@ fc7a6fbd20073a7f1950fabc96799af5 *tests/testthat/test-CheckVerbatimEndDate.R
 02f33a5bc6ff0c84657d505689286cf7 *tests/testthat/test-DrugRecordChecks.R
 c8c6a12c96056af7748870154b386f26 *tests/testthat/test-Eunomia.R
 5b88d0d1546a47ee7e02d035b1142423 *tests/testthat/test-GetDrugMissings.R
-28054a34a36d6e672b5a4cea66615ec1 *tests/testthat/test-GetDrugRecords.R
+d5fa09025a3540e9f281bedc19f2f37f *tests/testthat/test-GetDrugRecords.R
 1221118b2ff49a364b1d1fb52411ae8d *tests/testthat/test-IngredientOverview.R
 3802885ae9c277660129f072cf5dcfa9 *tests/testthat/test-MockDrugExposureData.R
 f8892635b4628572ee87653133315e1e *tests/testthat/test-ObscureCounts.R
