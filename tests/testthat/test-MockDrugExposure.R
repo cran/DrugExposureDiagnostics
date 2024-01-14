@@ -199,5 +199,4 @@ test_that("check expected errors", {
     mockDrugExposure(patient_size = -1)
   )
 
-
 })

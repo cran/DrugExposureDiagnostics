@@ -1,4 +1,5 @@
 ## ---- include = FALSE---------------------------------------------------------
+options(rmarkdown.html_vignette.check_title = FALSE)
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>")
@@ -20,7 +21,8 @@ cdm <- getEunomiaCdm()
 #                           "dose", "sig", "quantity", "ingredientOverview", "ingredientPresence", "histogram", "diagnosticsSummary"),
 #                minCellCount = 5,
 #                sample = 10000,
-#                verbose = FALSE
+#                verbose = FALSE,
+#                byConcept = TRUE
 #  )
 
 ## ----executeChecks------------------------------------------------------------
