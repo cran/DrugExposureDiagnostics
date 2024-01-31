@@ -17,7 +17,7 @@ cdm <- getEunomiaCdm(ingredientId = acetaminophen)
 acetaminophen_checks <- executeChecks(cdm = cdm, 
                                       ingredients = acetaminophen, 
                                       checks = c("missing", "exposureDuration", "type", "route", "sourceConcept", "daysSupply", "verbatimEndDate", 
-                                                 "dose", "sig", "quantity", "ingredientOverview", "ingredientPresence", "histogram", "diagnosticsSummary"))
+                                                 "dose", "sig", "quantity", "histogram", "diagnosticsSummary"))
 
 ## -----------------------------------------------------------------------------
 acetaminophen_checks$diagnosticsSummary %>% 
@@ -65,13 +65,5 @@ acetaminophen_checks$drugSigByConcept %>%
 
 ## -----------------------------------------------------------------------------
 acetaminophen_checks$drugQuantityByConcept %>% 
-  glimpse()
-
-## -----------------------------------------------------------------------------
-acetaminophen_checks$drugIngredientOverview %>% 
-  glimpse()
-
-## -----------------------------------------------------------------------------
-acetaminophen_checks$drugIngredientPresence %>% 
   glimpse()
 

@@ -2870,7 +2870,7 @@ results of each check.</p>
 <span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>              <span class="at">ingredients =</span> <span class="fu">c</span>(<span class="dv">1125315</span>),</span>
 <span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>              <span class="at">subsetToConceptId =</span> <span class="cn">NULL</span>,</span>
 <span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>              <span class="at">checks =</span> <span class="fu">c</span>(<span class="st">&quot;missing&quot;</span>, <span class="st">&quot;exposureDuration&quot;</span>, <span class="st">&quot;type&quot;</span>, <span class="st">&quot;route&quot;</span>, <span class="st">&quot;sourceConcept&quot;</span>, <span class="st">&quot;daysSupply&quot;</span>, <span class="st">&quot;verbatimEndDate&quot;</span>, </span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>                         <span class="st">&quot;dose&quot;</span>, <span class="st">&quot;sig&quot;</span>, <span class="st">&quot;quantity&quot;</span>, <span class="st">&quot;ingredientOverview&quot;</span>, <span class="st">&quot;ingredientPresence&quot;</span>, <span class="st">&quot;histogram&quot;</span>, <span class="st">&quot;diagnosticsSummary&quot;</span>), </span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>                         <span class="st">&quot;dose&quot;</span>, <span class="st">&quot;sig&quot;</span>, <span class="st">&quot;quantity&quot;</span>, <span class="st">&quot;histogram&quot;</span>, <span class="st">&quot;diagnosticsSummary&quot;</span>), </span>
 <span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>              <span class="at">minCellCount =</span> <span class="dv">5</span>,</span>
 <span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>              <span class="at">sample =</span> <span class="dv">10000</span>,</span>
 <span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>              <span class="at">verbose =</span> <span class="cn">FALSE</span>,</span>
@@ -2904,8 +2904,8 @@ drugs contain the acetaminophen as an ingredient.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">datatable</span>(all_checks<span class="sc">$</span>ingredientConcepts,</span>
 <span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>  <span class="at">rownames =</span> <span class="cn">FALSE</span></span>
 <span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>)</span></code></pre></div>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-31e6b3d7a7d3960321a7" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-31e6b3d7a7d3960321a7">{"x":null,"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-d8c5baba43a6da71ec4e" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-d8c5baba43a6da71ec4e">{"x":null,"evals":[],"jsHooks":[]}</script>
 <p>After running the checks, we can write the CSV files into a zip file
 to disk using the <code>writeResultToDisk()</code> function.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">writeResultToDisk</span>(all_checks,</span>

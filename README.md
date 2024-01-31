@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# DrugExposureDiagnostics <img src='man/figures/DrugExposureDiagnostics.png' align="right" height="139"/>
+# DrugExposureDiagnostics <img src='man/figures/DrugExposureDiagnostics.png' align="right" width="139"/>
 
 <!-- badges: start -->
 
@@ -60,22 +60,8 @@ the ´executeChecks´ function.
 all_checks <- executeChecks(cdm = cdm, 
                             ingredients = 1125315, 
                             checks = c("missing", "exposureDuration", "type", "route", "sourceConcept", "daysSupply", "verbatimEndDate", 
-                                       "dose", "sig", "quantity", "ingredientOverview", "ingredientPresence", "histogram", "diagnosticsSummary"))
-#> Warning: `getIngredientOverview()` was deprecated in DrugExposureDiagnostics 0.4.7.
-#> ℹ The deprecated feature was likely used in the DrugExposureDiagnostics
-#>   package.
-#>   Please report the issue to the authors.
-#> This warning is displayed once every 8 hours.
-#> Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
-#> generated.
+                                       "dose", "sig", "quantity", "histogram", "diagnosticsSummary"))
 #> population after earliestStartDate smaller than sample
-#> Warning: `getIngredientPresence()` was deprecated in DrugExposureDiagnostics 0.4.7.
-#> ℹ The deprecated feature was likely used in the DrugExposureDiagnostics
-#>   package.
-#>   Please report the issue to the authors.
-#> This warning is displayed once every 8 hours.
-#> Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
-#> generated.
 #> Joining with `by = join_by(ingredient_concept_id)`
 #> Joining with `by = join_by(ingredient_concept_id)`
 ```
@@ -84,15 +70,19 @@ The output is a list which contains the following set of tibbles:
 
 ``` r
 names(all_checks)
-#>  [1] "conceptSummary"              "missingValuesOverall"       
-#>  [3] "drugExposureDurationOverall" "drugTypesOverall"           
-#>  [5] "drugRoutesOverall"           "drugSourceConceptsOverall"  
-#>  [7] "drugDaysSupply"              "drugVerbatimEndDate"        
-#>  [9] "drugDose"                    "drugSig"                    
-#> [11] "drugQuantity"                "drugIngredientOverview"     
-#> [13] "drugIngredientPresence"      "drugDaysSupplyHistogram"    
-#> [15] "drugQuantityHistogram"       "drugDurationHistogram"      
-#> [17] "diagnosticsSummary"
+#>  [1] "conceptSummary"                "missingValuesOverall"         
+#>  [3] "missingValuesByConcept"        "drugExposureDurationOverall"  
+#>  [5] "drugExposureDurationByConcept" "drugTypesOverall"             
+#>  [7] "drugTypesByConcept"            "drugRoutesOverall"            
+#>  [9] "drugRoutesByConcept"           "drugSourceConceptsOverall"    
+#> [11] "drugSourceConceptsByConcept"   "drugDaysSupply"               
+#> [13] "drugDaysSupplyByConcept"       "drugVerbatimEndDate"          
+#> [15] "drugVerbatimEndDateByConcept"  "drugDose"                     
+#> [17] "drugDoseByConcept"             "drugSig"                      
+#> [19] "drugSigByConcept"              "drugQuantity"                 
+#> [21] "drugQuantityByConcept"         "drugDaysSupplyHistogram"      
+#> [23] "drugQuantityHistogram"         "drugDurationHistogram"        
+#> [25] "diagnosticsSummary"
 ```
 
 The first item contains information on the concept ids that are used in
@@ -174,7 +164,31 @@ all_checks$missingValuesOverall
 #> #   n_records_missing_value <dbl>, proportion_records_missing_value <dbl>,
 #> #   result_obscured <lgl>
 all_checks$missingValuesByConcept
-#> NULL
+#> # A tibble: 18 × 11
+#> # Rowwise:  drug_concept_id, drug, ingredient_concept_id, ingredient
+#>    drug_concept_id drug      ingredient_concept_id ingredient variable n_records
+#>              <int> <chr>                     <dbl> <chr>      <chr>        <int>
+#>  1        40162522 Acetamin…               1125315 Acetamino… n_missi…        59
+#>  2        40162522 Acetamin…               1125315 Acetamino… n_missi…        59
+#>  3        40162522 Acetamin…               1125315 Acetamino… n_missi…        59
+#>  4        40162522 Acetamin…               1125315 Acetamino… n_missi…        59
+#>  5        40162522 Acetamin…               1125315 Acetamino… n_missi…        59
+#>  6        40162522 Acetamin…               1125315 Acetamino… n_missi…        59
+#>  7        40162522 Acetamin…               1125315 Acetamino… n_missi…        59
+#>  8        40162522 Acetamin…               1125315 Acetamino… n_missi…        59
+#>  9        40162522 Acetamin…               1125315 Acetamino… n_missi…        59
+#> 10        40162522 Acetamin…               1125315 Acetamino… n_missi…        59
+#> 11        40162522 Acetamin…               1125315 Acetamino… n_missi…        59
+#> 12        40162522 Acetamin…               1125315 Acetamino… n_missi…        59
+#> 13        40162522 Acetamin…               1125315 Acetamino… n_missi…        59
+#> 14        40162522 Acetamin…               1125315 Acetamino… n_missi…        59
+#> 15        40162522 Acetamin…               1125315 Acetamino… n_missi…        59
+#> 16        40162522 Acetamin…               1125315 Acetamino… n_missi…        59
+#> 17        40162522 Acetamin…               1125315 Acetamino… n_missi…        59
+#> 18        40162522 Acetamin…               1125315 Acetamino… n_missi…        59
+#> # ℹ 5 more variables: n_sample <dbl>, n_records_not_missing_value <dbl>,
+#> #   n_records_missing_value <dbl>, proportion_records_missing_value <dbl>,
+#> #   result_obscured <lgl>
 ```
 
 Or we can also see a summary of drug exposure duration
@@ -195,7 +209,18 @@ all_checks$drugExposureDurationOverall
 #> #   q90_drug_exposure_days <dbl>, q95_drug_exposure_days <dbl>,
 #> #   maximum_drug_exposure_days <dbl>, result_obscured <lgl>
 all_checks$drugExposureDurationByConcept
-#> NULL
+#> # A tibble: 1 × 19
+#> # Rowwise:  drug_concept_id, drug, ingredient_concept_id
+#>   drug_concept_id drug       ingredient_concept_id ingredient n_records n_sample
+#>             <int> <chr>                      <dbl> <chr>          <int>    <dbl>
+#> 1        40162522 Acetamino…               1125315 Acetamino…        59    10000
+#> # ℹ 13 more variables: n_non_negative_days <int>, n_negative_days <int>,
+#> #   proportion_negative_days <dbl>, minimum_drug_exposure_days <dbl>,
+#> #   q05_drug_exposure_days <dbl>, q10_drug_exposure_days <dbl>,
+#> #   q25_drug_exposure_days <dbl>, median_drug_exposure_days <dbl>,
+#> #   q75_drug_exposure_days <dbl>, q90_drug_exposure_days <dbl>,
+#> #   q95_drug_exposure_days <dbl>, maximum_drug_exposure_days <dbl>,
+#> #   result_obscured <lgl>
 ```
 
 For further information on the checks performed please see the package
