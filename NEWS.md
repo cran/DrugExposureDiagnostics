@@ -1,5 +1,9 @@
 # DrugExposureDiagnostics (development version)
 
+# DrugExposureDiagnostics 1.0.4
+* Add option to exclude drug concept ids
+* Update license
+
 # DrugExposureDiagnostics 1.0.3
 * Compatibility with latest CDMConnector
 * Fix sample bug

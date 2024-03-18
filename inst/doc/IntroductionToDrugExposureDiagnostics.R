@@ -13,27 +13,24 @@ library(DT)
 ## -----------------------------------------------------------------------------
 cdm <- getEunomiaCdm()
 
-## ----eval=FALSE---------------------------------------------------------------
-#  executeChecks(cdm,
-#                ingredients = c(1125315),
-#                subsetToConceptId = NULL,
-#                checks = c("missing", "exposureDuration", "type", "route", "sourceConcept", "daysSupply", "verbatimEndDate",
-#                           "dose", "sig", "quantity", "histogram", "diagnosticsSummary"),
-#                minCellCount = 5,
-#                sample = 10000,
-#                verbose = FALSE,
-#                byConcept = TRUE
-#  )
-
 ## ----executeChecks------------------------------------------------------------
-all_checks<-executeChecks(cdm, ingredients = 1125315)
-
+all_checks <- executeChecks(cdm,
+                            ingredients = c(1125315),
+                            subsetToConceptId = NULL,
+                            checks = c("missing", "exposureDuration", "type", "route", "sourceConcept", "daysSupply", "verbatimEndDate", 
+                                       "dose", "sig", "quantity", "histogram", "diagnosticsSummary"), 
+                            minCellCount = 5,
+                            sample = 10000,
+                            tablePrefix = NULL,
+                            earliestStartDate = "2010-01-01",
+                            verbose = FALSE,
+                            byConcept = TRUE)
 
 ## -----------------------------------------------------------------------------
 names(all_checks)
 
 ## ----  message=FALSE, warning=FALSE-------------------------------------------
-datatable(all_checks$ingredientConcepts,
+datatable(all_checks$conceptSummary,
   rownames = FALSE
 )
 
