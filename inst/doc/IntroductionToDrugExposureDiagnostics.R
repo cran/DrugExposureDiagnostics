@@ -11,14 +11,14 @@ library(dplyr)
 library(DT)
 
 ## -----------------------------------------------------------------------------
-cdm <- getEunomiaCdm()
+cdm <- mockDrugExposure()
 
 ## ----executeChecks------------------------------------------------------------
 all_checks <- executeChecks(cdm,
                             ingredients = c(1125315),
                             subsetToConceptId = NULL,
-                            checks = c("missing", "exposureDuration", "type", "route", "sourceConcept", "daysSupply", "verbatimEndDate", 
-                                       "dose", "sig", "quantity", "histogram", "diagnosticsSummary"), 
+                            checks = c("missing", "exposureDuration", "type", "route", "sourceConcept", "daysSupply", 
+                                       "verbatimEndDate", "dose", "sig", "quantity", "diagnosticsSummary"), 
                             minCellCount = 5,
                             sample = 10000,
                             tablePrefix = NULL,
@@ -36,7 +36,7 @@ datatable(all_checks$conceptSummary,
 
 ## ----eval=FALSE---------------------------------------------------------------
 #  writeResultToDisk(all_checks,
-#                    databaseId = "your_database_id",
+#                    databaseId = "your_database",
 #                    outputFolder = "output_folder")
 
 ## ---- echo=FALSE--------------------------------------------------------------

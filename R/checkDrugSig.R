@@ -18,7 +18,7 @@
 #' written by the provider.
 #'
 #' @param cdm CDMConnector reference object
-#' @param drugRecordsTable modified drug exposure table
+#' @param drugRecordsTable a modified version of the drug exposure table, default "ingredient_drug_records"
 #' @param byConcept whether to get result by drug concept
 #' @param sampleSize the sample size given in execute checks
 #'
@@ -36,14 +36,6 @@ checkDrugSig <- function(cdm,
   )
   checkmate::reportAssertions(collection = errorMessage)
 
-  records <- cdm[[drugRecordsTable]] %>%
-    dplyr::select(
-      "drug_concept_id",
-      "drug",
-      "ingredient_concept_id",
-      "ingredient",
-      "sig")
-
   if (isTRUE(byConcept)) {
     grouping <- c("drug_concept_id", "drug",
                   "ingredient_concept_id",
@@ -53,14 +45,28 @@ checkDrugSig <- function(cdm,
                   "ingredient", "sig")
   }
 
-  records <- records %>%
+  total <- cdm[[drugRecordsTable]] %>%
+    dplyr::summarise(total = dplyr::n()) %>% dplyr::pull()
+
+  records <- cdm[[drugRecordsTable]] %>%
+    dplyr::select(
+      "drug_concept_id",
+      "drug",
+      "ingredient_concept_id",
+      "ingredient",
+      "sig",
+      "person_id") %>%
     dplyr::group_by(dplyr::across(dplyr::all_of(grouping))) %>%
     dplyr::summarise(n_records = as.integer(dplyr::n()),
-                     n_sample = .env$sampleSize) %>%
-    dplyr::select(tidyselect::any_of(
+                     n_sample = .env$sampleSize,
+                     n_person = dplyr::n_distinct(.data$person_id)) %>%
+    dplyr::compute() %>%
+    dplyr::mutate(proportion_records = .data$n_records / .env$total) %>%
+        dplyr::select(tidyselect::any_of(
       c("drug_concept_id", "drug",
         "ingredient_concept_id",
-        "ingredient", "sig", "n_records")))
+        "ingredient", "sig",
+        "n_records", "n_sample","n_person","proportion_records")))
 
   return(records)
 }
