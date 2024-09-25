@@ -2807,7 +2807,9 @@ DrugExposureDiagnostics</h1>
 <p>First, connect to the database. Examples of how to connect your
 database using CDMConnector can be found here: <a href="https://darwin-eu.github.io/CDMConnector/articles/a04_DBI_connection_examples.html" class="uri">https://darwin-eu.github.io/CDMConnector/articles/a04_DBI_connection_examples.html</a><br />
 Here we use the internal mock database.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>cdm <span class="ot">&lt;-</span> <span class="fu">mockDrugExposure</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>cdm <span class="ot">&lt;-</span> <span class="fu">mockDrugExposure</span>()</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="co">#&gt; Warning: ! 1 column in drug_strength do not match expected column type:</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="co">#&gt; • `box_size` is numeric but expected integer</span></span></code></pre></div>
 <div id="drugs-of-interest" class="section level3">
 <h3>Drug(s) of interest</h3>
 <p>In the DrugExposureDiagnostics package, all the diagnostics are
@@ -2890,9 +2892,9 @@ Multiple ingredients can be added in the vector of ´ingredients´</p>
 <span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a><span class="co">#&gt;   q75, q95, min, max</span></span>
 <span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a><span class="co">#&gt; ! Table is collected to memory as not all requested estimates are supported on</span></span>
 <span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a><span class="co">#&gt;   the database side</span></span>
-<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a><span class="co">#&gt; → Start summary of data, at 2024-09-10 09:19:54.384194</span></span>
+<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a><span class="co">#&gt; → Start summary of data, at 2024-09-25 14:28:02.832941</span></span>
 <span id="cb3-19"><a href="#cb3-19" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb3-20"><a href="#cb3-20" tabindex="-1"></a><span class="co">#&gt; ✔ Summary finished, at 2024-09-10 09:19:54.505417</span></span></code></pre></div>
+<span id="cb3-20"><a href="#cb3-20" tabindex="-1"></a><span class="co">#&gt; ✔ Summary finished, at 2024-09-25 14:28:02.956154</span></span></code></pre></div>
 <p>The <code>cdm</code> is the database reference of the OMOP CDM using
 the <code>CDMConnector</code> package.<br />
 The <code>ingredients</code> is a list of ingredients of interests, by
@@ -2990,7 +2992,7 @@ part of the diagnostics investigation.</p>
 <span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>  <span class="at">rownames =</span> <span class="cn">FALSE</span></span>
 <span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>)</span></code></pre></div>
 <div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-eddd48ca95df6702b292" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-eddd48ca95df6702b292">{"x":{"filter":"none","vertical":false,"data":[[40231925,19133768,40162522,40229134,1127433,1127078],["acetaminophen 325 MG / Hydrocodone Bitartrate","acetaminophen 160 MG Oral Tablet","acetaminophen 325 MG Oral Tablet","acetaminophen 21.7 MG/ML / Dextromethorphan","acetaminophen 325 MG / Oxycodone Hydrochloride","acetaminophen 750 MG / Hydrocodone Bitartrate"],[1125315,1125315,1125315,1125315,1125315,1125315],["acetaminophen","acetaminophen","acetaminophen","acetaminophen","acetaminophen","acetaminophen"],[10,14,18,12,13,19],[9,13,15,11,11,13],["Drug","Drug","Drug","Drug","Drug","Drug"],["RxNorm","RxNorm","RxNorm","RxNorm","RxNorm","RxNorm"],["Clinical Drug","Clinical Drug","Clinical Drug","Clinical Drug","Clinical Drug","Clinical Drug"],["S","S","S","S","S","S"],["857005","282464","313782","1043400","1049221","833036"],["1970-01-01","1970-01-01","1970-01-01","1970-01-01","1970-01-01","1970-01-01"],["2099-12-31","2099-12-31","2099-12-31","2099-12-31","2099-12-31","2099-12-31"],[null,null,null,null,null,null],[100,100,null,100,300,300],[8587,8587,null,8587,8587,8587],[null,null,1,null,null,null],[null,null,8576,null,null,null],[null,null,null,null,null,null],[null,null,1,null,null,null],[null,null,8587,null,null,null],[null,null,null,null,null,null],[null,null,null,null,null,null],["Oral Tablet","Oral Tablet","Oral Tablet","Oral Tablet","Oral Tablet","Oral Tablet"],[false,false,false,false,false,false]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>drug_concept_id<\/th>\n      <th>drug<\/th>\n      <th>ingredient_concept_id<\/th>\n      <th>ingredient<\/th>\n      <th>n_records<\/th>\n      <th>n_patients<\/th>\n      <th>domain_id<\/th>\n      <th>vocabulary_id<\/th>\n      <th>concept_class_id<\/th>\n      <th>standard_concept<\/th>\n      <th>concept_code<\/th>\n      <th>valid_start_date<\/th>\n      <th>valid_end_date<\/th>\n      <th>invalid_reason<\/th>\n      <th>amount_value<\/th>\n      <th>amount_unit_concept_id<\/th>\n      <th>numerator_value<\/th>\n      <th>numerator_unit_concept_id<\/th>\n      <th>numerator_unit<\/th>\n      <th>denominator_value<\/th>\n      <th>denominator_unit_concept_id<\/th>\n      <th>denominator_unit<\/th>\n      <th>amount_unit<\/th>\n      <th>dose_form<\/th>\n      <th>result_obscured<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[0,2,4,5,14,15,16,17,19,20]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-eddd48ca95df6702b292">{"x":{"filter":"none","vertical":false,"data":[[40231925,19133768,1127433,1127078,40162522,40229134],["acetaminophen 325 MG / Hydrocodone Bitartrate","acetaminophen 160 MG Oral Tablet","acetaminophen 325 MG / Oxycodone Hydrochloride","acetaminophen 750 MG / Hydrocodone Bitartrate","acetaminophen 325 MG Oral Tablet","acetaminophen 21.7 MG/ML / Dextromethorphan"],[1125315,1125315,1125315,1125315,1125315,1125315],["acetaminophen","acetaminophen","acetaminophen","acetaminophen","acetaminophen","acetaminophen"],[10,14,13,19,18,12],[9,13,11,13,15,11],["Drug","Drug","Drug","Drug","Drug","Drug"],["RxNorm","RxNorm","RxNorm","RxNorm","RxNorm","RxNorm"],["Clinical Drug","Clinical Drug","Clinical Drug","Clinical Drug","Clinical Drug","Clinical Drug"],["S","S","S","S","S","S"],["857005","282464","1049221","833036","313782","1043400"],["1970-01-01","1970-01-01","1970-01-01","1970-01-01","1970-01-01","1970-01-01"],["2099-12-31","2099-12-31","2099-12-31","2099-12-31","2099-12-31","2099-12-31"],[null,null,null,null,null,null],[100,100,300,300,null,100],[8587,8587,8587,8587,null,8587],[null,null,null,null,1,null],[null,null,null,null,8576,null],[null,null,null,null,null,null],[null,null,null,null,1,null],[null,null,null,null,8587,null],[null,null,null,null,null,null],[0,0,0,0,0,0],[null,null,null,null,null,null],["Oral Tablet","Oral Tablet","Oral Tablet","Oral Tablet","Oral Tablet","Oral Tablet"],[false,false,false,false,false,false]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>drug_concept_id<\/th>\n      <th>drug<\/th>\n      <th>ingredient_concept_id<\/th>\n      <th>ingredient<\/th>\n      <th>n_records<\/th>\n      <th>n_patients<\/th>\n      <th>domain_id<\/th>\n      <th>vocabulary_id<\/th>\n      <th>concept_class_id<\/th>\n      <th>standard_concept<\/th>\n      <th>concept_code<\/th>\n      <th>valid_start_date<\/th>\n      <th>valid_end_date<\/th>\n      <th>invalid_reason<\/th>\n      <th>amount_value<\/th>\n      <th>amount_unit_concept_id<\/th>\n      <th>numerator_value<\/th>\n      <th>numerator_unit_concept_id<\/th>\n      <th>numerator_unit<\/th>\n      <th>denominator_value<\/th>\n      <th>denominator_unit_concept_id<\/th>\n      <th>denominator_unit<\/th>\n      <th>box_size<\/th>\n      <th>amount_unit<\/th>\n      <th>dose_form<\/th>\n      <th>result_obscured<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[0,2,4,5,14,15,16,17,19,20,22]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <table>
 <colgroup>
 <col width="50%" />
@@ -3137,14 +3139,23 @@ the minimum cell count, otherwise FALSE.</td>
 <p>After running the checks, we can write the created outputs (CSV
 files) into a zip file to disk using the
 <code>writeResultToDisk()</code> function. The zip created from using
-the <code>writeResultToDisk()</code> function can be input (unzipped)
-into the correspoding Shiny Application.<br />
+the <code>writeResultToDisk()</code> function serves as the input for
+the corresponding Shiny Application.<br />
 Please replace the “your_database” with the name of your database.
 Create your designated “output_folder” at your desired location and put
 the path if not the working directory.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">writeResultToDisk</span>(all_checks,</span>
 <span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>                  <span class="at">databaseId =</span> <span class="st">&quot;your_database&quot;</span>, </span>
 <span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>                  <span class="at">outputFolder =</span> <span class="st">&quot;output_folder&quot;</span>)</span></code></pre></div>
+</div>
+<div id="view-results-in-the-shiny-app-make-it-available-for-publishing" class="section level3">
+<h3>View results in the Shiny app &amp; make it available for
+publishing</h3>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">viewResults</span>(<span class="at">dataFolder =</span> <span class="fu">file.path</span>(<span class="fu">getwd</span>(), <span class="st">&quot;output_folder&quot;</span>),</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>            <span class="at">makePublishable =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>            <span class="at">publishDir =</span> <span class="fu">file.path</span>(<span class="fu">getwd</span>(), <span class="st">&quot;MyStudyResultsExplorer&quot;</span>),</span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>            <span class="at">overwritePublishDir =</span> <span class="cn">TRUE</span></span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>)</span></code></pre></div>
 </div>
 
 

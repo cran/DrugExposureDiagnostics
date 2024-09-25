@@ -39,6 +39,13 @@ datatable(all_checks$conceptSummary,
 #                    databaseId = "your_database",
 #                    outputFolder = "output_folder")
 
+## ----eval=FALSE---------------------------------------------------------------
+#  viewResults(dataFolder = file.path(getwd(), "output_folder"),
+#              makePublishable = TRUE,
+#              publishDir = file.path(getwd(), "MyStudyResultsExplorer"),
+#              overwritePublishDir = TRUE
+#  )
+
 ## ---- echo=FALSE--------------------------------------------------------------
   DBI::dbDisconnect(attr(cdm, "dbcon"), shutdown = TRUE)
 
