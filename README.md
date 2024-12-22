@@ -40,7 +40,7 @@ citation("DrugExposureDiagnostics")
 #> 
 #>   Inberg G, Burn E, Burkard T (????). _DrugExposureDiagnostics:
 #>   Diagnostics for OMOP Common Data Model Drug Records_. R package
-#>   version 1.0.9, https://github.com/darwin-eu/DrugExposureDiagnostics,
+#>   version 1.1.0, https://github.com/darwin-eu/DrugExposureDiagnostics,
 #>   <https://darwin-eu.github.io/DrugExposureDiagnostics/>.
 #> 
 #> A BibTeX entry for LaTeX users is
@@ -48,7 +48,7 @@ citation("DrugExposureDiagnostics")
 #>   @Manual{,
 #>     title = {DrugExposureDiagnostics: Diagnostics for OMOP Common Data Model Drug Records},
 #>     author = {Ger Inberg and Edward Burn and Theresa Burkard},
-#>     note = {R package version 1.0.9, https://github.com/darwin-eu/DrugExposureDiagnostics},
+#>     note = {R package version 1.1.0, https://github.com/darwin-eu/DrugExposureDiagnostics},
 #>     url = {https://darwin-eu.github.io/DrugExposureDiagnostics/},
 #>   }
 ```
@@ -66,8 +66,6 @@ cdm <- mockDrugExposure()
 #> Note: method with signature 'DBIConnection#Id' chosen for function 'dbExistsTable',
 #>  target signature 'duckdb_connection#Id'.
 #>  "duckdb_connection#ANY" would also be valid
-#> Warning: ! 1 column in drug_strength do not match expected column type:
-#> • `box_size` is numeric but expected integer
 ```
 
 Let´s look at the ingredient acetaminophen
@@ -77,19 +75,29 @@ We can run all the checks available in ´DrugExposureDiagnostics´ using
 the ´executeChecks´ function.
 
 ``` r
-all_checks <- executeChecks(cdm = cdm, 
-                            ingredients = 1125315, 
-                            checks = c("missing", "exposureDuration", "type", "route", "sourceConcept", "daysSupply", 
-                                       "verbatimEndDate", "dose", "sig", "quantity", "diagnosticsSummary"))
+all_checks <- executeChecks(
+  cdm = cdm,
+  ingredients = 1125315,
+  checks = c(
+    "missing", "exposureDuration", "type", "route", "sourceConcept", "daysSupply",
+    "verbatimEndDate", "dose", "sig", "quantity", "diagnosticsSummary"
+  )
+)
 #> population after earliestStartDate smaller than sample, sampling ignored
 #> ℹ The following estimates will be computed:
 #> • daily_dose: count_missing, percentage_missing, mean, sd, q05, q25, median,
 #>   q75, q95, min, max
 #> ! Table is collected to memory as not all requested estimates are supported on
 #>   the database side
-#> → Start summary of data, at 2024-11-18 16:47:51.830587
+#> → Start summary of data, at 2024-12-19 18:52:57.147139
 #> 
-#> ✔ Summary finished, at 2024-11-18 16:47:52.065523
+#> Registered S3 method overwritten by 'visOmopResults':
+#>   method                 from        
+#>   tidy.summarised_result omopgenerics
+#> 
+#> ✔ Summary finished, at 2024-12-19 18:52:57.302844
+#> `sample_size` casted to character.
+#> `sample_size` eliminated from settings as all elements are NA.
 ```
 
 The output is a list which contains the following set of tibbles:
@@ -105,7 +113,8 @@ names(all_checks)
 #> [13] "drugVerbatimEndDate"           "drugVerbatimEndDateByConcept" 
 #> [15] "drugDose"                      "drugSig"                      
 #> [17] "drugSigByConcept"              "drugQuantity"                 
-#> [19] "drugQuantityByConcept"         "diagnosticsSummary"
+#> [19] "drugQuantityByConcept"         "diagnosticsSummary"           
+#> [21] "metadata"
 ```
 
 The first item contains information on the concept ids that are used in
@@ -116,43 +125,43 @@ glimpse(all_checks$conceptSummary)
 #> Rows: 6
 #> Columns: 26
 #> Rowwise: 
-#> $ drug_concept_id             <int> 19133768, 40231925, 1127078, 40162522, 402…
-#> $ drug                        <chr> "acetaminophen 160 MG Oral Tablet", "aceta…
+#> $ drug_concept_id             <int> 1127078, 40162522, 40229134, 40231925, 191…
+#> $ drug                        <chr> "acetaminophen 750 MG / Hydrocodone Bitart…
 #> $ ingredient_concept_id       <int> 1125315, 1125315, 1125315, 1125315, 112531…
 #> $ ingredient                  <chr> "acetaminophen", "acetaminophen", "acetami…
-#> $ n_records                   <int> 14, 10, 19, 18, 12, 13
-#> $ n_patients                  <int> 13, 9, 13, 15, 11, 11
+#> $ n_records                   <int> 19, 18, 12, 10, 14, 13
+#> $ n_patients                  <int> 13, 15, 11, 9, 13, 11
 #> $ domain_id                   <chr> "Drug", "Drug", "Drug", "Drug", "Drug", "D…
 #> $ vocabulary_id               <chr> "RxNorm", "RxNorm", "RxNorm", "RxNorm", "R…
 #> $ concept_class_id            <chr> "Clinical Drug", "Clinical Drug", "Clinica…
 #> $ standard_concept            <chr> "S", "S", "S", "S", "S", "S"
-#> $ concept_code                <chr> "282464", "857005", "833036", "313782", "1…
+#> $ concept_code                <chr> "833036", "313782", "1043400", "857005", "…
 #> $ valid_start_date            <date> 1970-01-01, 1970-01-01, 1970-01-01, 1970-0…
 #> $ valid_end_date              <date> 2099-12-31, 2099-12-31, 2099-12-31, 2099-1…
 #> $ invalid_reason              <chr> NA, NA, NA, NA, NA, NA
-#> $ amount_value                <dbl> 100, 100, NA, 300, NA, 100
-#> $ amount_unit_concept_id      <int> 8587, 8587, NA, 8587, NA, 8587
-#> $ numerator_value             <dbl> NA, NA, 3, NA, 3, NA
-#> $ numerator_unit_concept_id   <int> NA, NA, 9655, NA, 9655, NA
+#> $ amount_value                <dbl> 200, NA, NA, 300, 200, 200
+#> $ amount_unit_concept_id      <int> 9655, NA, NA, 9655, 9655, 9655
+#> $ numerator_value             <dbl> NA, 1, 1, NA, NA, NA
+#> $ numerator_unit_concept_id   <int> NA, 8576, 8576, NA, NA, NA
 #> $ numerator_unit              <chr> NA, NA, NA, NA, NA, NA
-#> $ denominator_value           <dbl> NA, NA, 100, NA, 100, NA
-#> $ denominator_unit_concept_id <int> NA, NA, 8587, NA, 8587, NA
+#> $ denominator_value           <dbl> NA, 10, 10, NA, NA, NA
+#> $ denominator_unit_concept_id <int> NA, 8576, 8576, NA, NA, NA
 #> $ denominator_unit            <chr> NA, NA, NA, NA, NA, NA
 #> $ box_size                    <dbl> 0, 0, 0, 0, 0, 0
 #> $ amount_unit                 <chr> NA, NA, NA, NA, NA, NA
 #> $ dose_form                   <chr> "Oral Tablet", "Oral Tablet", "Oral Tablet…
 #> $ result_obscured             <lgl> FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
-all_checks$conceptSummary %>% 
+all_checks$conceptSummary %>%
   select("drug_concept_id", "drug")
 #> # A tibble: 6 × 2
 #> # Rowwise: 
 #>   drug_concept_id drug                                          
 #>             <int> <chr>                                         
-#> 1        19133768 acetaminophen 160 MG Oral Tablet              
-#> 2        40231925 acetaminophen 325 MG / Hydrocodone Bitartrate 
-#> 3         1127078 acetaminophen 750 MG / Hydrocodone Bitartrate 
-#> 4        40162522 acetaminophen 325 MG Oral Tablet              
-#> 5        40229134 acetaminophen 21.7 MG/ML / Dextromethorphan   
+#> 1         1127078 acetaminophen 750 MG / Hydrocodone Bitartrate 
+#> 2        40162522 acetaminophen 325 MG Oral Tablet              
+#> 3        40229134 acetaminophen 21.7 MG/ML / Dextromethorphan   
+#> 4        40231925 acetaminophen 325 MG / Hydrocodone Bitartrate 
+#> 5        19133768 acetaminophen 160 MG Oral Tablet              
 #> 6         1127433 acetaminophen 325 MG / Oxycodone Hydrochloride
 ```
 
@@ -192,16 +201,16 @@ all_checks$missingValuesByConcept
 #> # Rowwise:  drug_concept_id, drug, ingredient_concept_id, ingredient
 #>    drug_concept_id drug      ingredient_concept_id ingredient variable n_records
 #>              <int> <chr>                     <int> <chr>      <chr>        <int>
-#>  1         1127078 acetamin…               1125315 acetamino… n_missi…         8
-#>  2         1127078 acetamin…               1125315 acetamino… n_missi…         8
-#>  3         1127078 acetamin…               1125315 acetamino… n_missi…         8
-#>  4         1127078 acetamin…               1125315 acetamino… n_missi…         8
-#>  5         1127078 acetamin…               1125315 acetamino… n_missi…         8
-#>  6         1127078 acetamin…               1125315 acetamino… n_missi…         8
-#>  7         1127078 acetamin…               1125315 acetamino… n_missi…         8
-#>  8         1127078 acetamin…               1125315 acetamino… n_missi…         8
-#>  9         1127078 acetamin…               1125315 acetamino… n_missi…         8
-#> 10         1127078 acetamin…               1125315 acetamino… n_missi…         8
+#>  1        40229134 acetamin…               1125315 acetamino… n_missi…         6
+#>  2        40229134 acetamin…               1125315 acetamino… n_missi…         6
+#>  3        40229134 acetamin…               1125315 acetamino… n_missi…         6
+#>  4        40229134 acetamin…               1125315 acetamino… n_missi…         6
+#>  5        40229134 acetamin…               1125315 acetamino… n_missi…         6
+#>  6        40229134 acetamin…               1125315 acetamino… n_missi…         6
+#>  7        40229134 acetamin…               1125315 acetamino… n_missi…         6
+#>  8        40229134 acetamin…               1125315 acetamino… n_missi…         6
+#>  9        40229134 acetamin…               1125315 acetamino… n_missi…         6
+#> 10        40229134 acetamin…               1125315 acetamino… n_missi…         6
 #> # ℹ 80 more rows
 #> # ℹ 6 more variables: n_sample <dbl>, n_person <dbl>,
 #> #   n_records_not_missing_value <dbl>, n_records_missing_value <dbl>,
@@ -254,6 +263,7 @@ After running the checks we can write the CSVs to disk using the
 
 ``` r
 writeResultToDisk(all_checks,
-                  databaseId = "Synthea", 
-                  outputFolder =tempdir())
+  databaseId = "Synthea",
+  outputFolder = tempdir()
+)
 ```

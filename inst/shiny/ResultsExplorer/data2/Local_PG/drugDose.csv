@@ -1,0 +1,5 @@
+"database_id","result_id","cdm_name","group_name","group_level","strata_name","strata_level","variable_name","variable_level","estimate_name","estimate_type","estimate_value","additional_name","additional_level","pattern_name","ingredient","ingredient_concept_id"
+"Local_PG",1,"Synthea synthetic health database","overall","overall","overall","overall","number records",NA,"count","integer","0","overall","overall","overall","overall",19015533
+"Local_PG",1,"Synthea synthetic health database","overall","overall","overall","overall","number subjects",NA,"count","integer","0","overall","overall","overall","overall",19015533
+"Local_PG",1,"Synthea synthetic health database","overall","overall","overall","overall","number records",NA,"count","integer","0","overall","overall","overall","overall",19026733
+"Local_PG",1,"Synthea synthetic health database","overall","overall","overall","overall","number subjects",NA,"count","integer","0","overall","overall","overall","overall",19026733

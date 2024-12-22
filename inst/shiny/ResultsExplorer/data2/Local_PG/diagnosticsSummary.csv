@@ -1,0 +1,1 @@
+"database_id","ingredient","ingredient_concept_id","n_records","n_patients","proportion_of_records_by_drug_type","proportion_of_records_by_route_type","proportion_of_records_with_dose_form","median_quantity_q05_q95","median_drug_exposure_days_q05_q95","proportion_of_records_with_negative_drug_exposure_days","result_obscured"

@@ -27,7 +27,9 @@ all_checks <- executeChecks(cdm,
   tablePrefix = NULL,
   earliestStartDate = "2010-01-01",
   verbose = FALSE,
-  byConcept = TRUE
+  byConcept = TRUE,
+  outputFolder = "output_folder",
+  filename = "your_database"
 )
 
 ## -----------------------------------------------------------------------------
