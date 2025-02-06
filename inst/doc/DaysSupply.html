@@ -2846,23 +2846,17 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <div id="run-the-days-supply-check" class="section level2">
 <h2>Run the days supply check</h2>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(DrugExposureDiagnostics)</span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="fu">library</span>(DT)</span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="co"># acetaminophen concept id is 1125315</span></span>
-<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>acetaminophen <span class="ot">&lt;-</span> <span class="dv">1125315</span></span>
-<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a>cdm <span class="ot">&lt;-</span> <span class="fu">mockDrugExposure</span>()</span>
-<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a>acetaminophen_checks <span class="ot">&lt;-</span> <span class="fu">executeChecks</span>(</span>
-<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a>  <span class="at">cdm =</span> cdm,</span>
-<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a>  <span class="at">ingredients =</span> acetaminophen,</span>
-<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a>  <span class="at">checks =</span> <span class="st">&quot;daysSupply&quot;</span></span>
-<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a>)</span></code></pre></div>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>cdm <span class="ot">&lt;-</span> <span class="fu">mockDrugExposure</span>()</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">executeChecks</span>(</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>  <span class="at">cdm =</span> cdm,</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>  <span class="at">checks =</span> <span class="st">&quot;daysSupply&quot;</span></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>)</span></code></pre></div>
 </div>
 <div id="days-supply-overall" class="section level2">
 <h2>Days supply Overall</h2>
 <p>This shows the days supply of the drug records summarised on
 ingredient level.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">datatable</span>(acetaminophen_checks<span class="sc">$</span>drugDaysSupply,</span>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>DT<span class="sc">::</span><span class="fu">datatable</span>(result<span class="sc">$</span>drugDaysSupply,</span>
 <span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>  <span class="at">rownames =</span> <span class="cn">FALSE</span></span>
 <span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>)</span></code></pre></div>
 <div class="datatables html-widget html-fill-item" id="htmlwidget-7455d817246b0e0deed0" style="width:100%;height:auto;"></div>
@@ -3013,11 +3007,7 @@ beginning.<br />
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">datatable</span>(acetaminophen_checks<span class="sc">$</span>drugDaysSupplyByConcept,</span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>  <span class="at">rownames =</span> <span class="cn">FALSE</span></span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>)</span></code></pre></div>
-<div class="datatables html-widget html-fill-item" id="htmlwidget-ee5160df473437e9e6c6" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-ee5160df473437e9e6c6">{"x":{"filter":"none","vertical":false,"data":[[1127078,1127433,19133768,40162522,40229134,40231925],["acetaminophen 750 MG / Hydrocodone Bitartrate","acetaminophen 325 MG / Oxycodone Hydrochloride","acetaminophen 160 MG Oral Tablet","acetaminophen 325 MG Oral Tablet","acetaminophen 21.7 MG/ML / Dextromethorphan","acetaminophen 325 MG / Hydrocodone Bitartrate"],[1125315,1125315,1125315,1125315,1125315,1125315],["acetaminophen","acetaminophen","acetaminophen","acetaminophen","acetaminophen","acetaminophen"],[8,8,8,12,6,null],[10000,10000,10000,10000,10000,null],[8,6,8,10,6,null],[0,0,0,0,0,null],[0,2.450000000000001,2.450000000000001,0,1.75,null],[0,4.900000000000001,4.900000000000001,0,3.5,null],[0,7,7,5.25,7,null],[7,28,14,28,7,null],[37.5,37.5,28,60,7,null],[60,69,46.59999999999999,87,33.5,null],[60,79.49999999999999,68.29999999999997,90,46.75,null],[60,90,90,90,60,null],[0,0,0,0,0,null],[8,8,8,12,6,null],[0,0,0,0,0,null],[0,0,0,0,0,null],[1,1,1,1,1,null],[0,0,0,0,0,null],[false,false,false,false,false,true]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>drug_concept_id<\/th>\n      <th>drug<\/th>\n      <th>ingredient_concept_id<\/th>\n      <th>ingredient<\/th>\n      <th>n_records<\/th>\n      <th>n_sample<\/th>\n      <th>n_person<\/th>\n      <th>minimum_drug_exposure_days_supply<\/th>\n      <th>q05_drug_exposure_days_supply<\/th>\n      <th>q10_drug_exposure_days_supply<\/th>\n      <th>q25_drug_exposure_days_supply<\/th>\n      <th>median_drug_exposure_days_supply<\/th>\n      <th>q75_drug_exposure_days_supply<\/th>\n      <th>q90_drug_exposure_days_supply<\/th>\n      <th>q95_drug_exposure_days_supply<\/th>\n      <th>maximum_drug_exposure_days_supply<\/th>\n      <th>n_different_days_supply_and_drug_dates<\/th>\n      <th>n_days_supply_match_drug_dates<\/th>\n      <th>n_missing_days_supply<\/th>\n      <th>proportion_different_days_supply_and_drug_dates<\/th>\n      <th>proportion_days_supply_match_drug_dates<\/th>\n      <th>proportion_missing_days_supply<\/th>\n      <th>result_obscured<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[0,2,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21]},{"name":"drug_concept_id","targets":0},{"name":"drug","targets":1},{"name":"ingredient_concept_id","targets":2},{"name":"ingredient","targets":3},{"name":"n_records","targets":4},{"name":"n_sample","targets":5},{"name":"n_person","targets":6},{"name":"minimum_drug_exposure_days_supply","targets":7},{"name":"q05_drug_exposure_days_supply","targets":8},{"name":"q10_drug_exposure_days_supply","targets":9},{"name":"q25_drug_exposure_days_supply","targets":10},{"name":"median_drug_exposure_days_supply","targets":11},{"name":"q75_drug_exposure_days_supply","targets":12},{"name":"q90_drug_exposure_days_supply","targets":13},{"name":"q95_drug_exposure_days_supply","targets":14},{"name":"maximum_drug_exposure_days_supply","targets":15},{"name":"n_different_days_supply_and_drug_dates","targets":16},{"name":"n_days_supply_match_drug_dates","targets":17},{"name":"n_missing_days_supply","targets":18},{"name":"proportion_different_days_supply_and_drug_dates","targets":19},{"name":"proportion_days_supply_match_drug_dates","targets":20},{"name":"proportion_missing_days_supply","targets":21},{"name":"result_obscured","targets":22}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>DT<span class="sc">::</span><span class="fu">datatable</span>(result<span class="sc">$</span>drugDaysSupplyByConcept, <span class="at">rownames =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 </div>
 
 

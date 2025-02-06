@@ -9,25 +9,17 @@ knitr::opts_chunk$set(
 
 ## ----setup--------------------------------------------------------------------
 library(DrugExposureDiagnostics)
-library(dplyr)
-library(DT)
-
-# acetaminophen concept id is 1125315
-acetaminophen <- 1125315
 cdm <- mockDrugExposure()
-acetaminophen_checks <- executeChecks(
+result <- executeChecks(
   cdm = cdm,
-  ingredients = acetaminophen,
   checks = "quantity"
 )
 
 ## -----------------------------------------------------------------------------
-datatable(acetaminophen_checks$drugQuantity,
+DT::datatable(result$drugQuantity,
   rownames = FALSE
 )
 
-## -----------------------------------------------------------------------------
-datatable(acetaminophen_checks$drugQuantityByConcept,
-  rownames = FALSE
-)
+## ----eval=FALSE---------------------------------------------------------------
+#  DT::datatable(result$drugQuantityByConcept, rownames = FALSE)
 

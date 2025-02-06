@@ -7,9 +7,6 @@ knitr::opts_chunk$set(
 
 ## ----setup,message= FALSE, warning=FALSE--------------------------------------
 library(DrugExposureDiagnostics)
-library(CDMConnector)
-library(dplyr)
-library(DT)
 
 ## -----------------------------------------------------------------------------
 cdm <- mockDrugExposure()
@@ -36,7 +33,7 @@ all_checks <- executeChecks(cdm,
 names(all_checks)
 
 ## ----message=FALSE, warning=FALSE---------------------------------------------
-datatable(all_checks$conceptSummary,
+DT::datatable(all_checks$conceptSummary,
   rownames = FALSE
 )
 
