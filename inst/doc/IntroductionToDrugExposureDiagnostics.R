@@ -25,6 +25,7 @@ all_checks <- executeChecks(cdm,
   earliestStartDate = "2010-01-01",
   verbose = FALSE,
   byConcept = TRUE,
+  exposureTypeId = NULL,
   outputFolder = "output_folder",
   filename = "your_database"
 )
