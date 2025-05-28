@@ -21,5 +21,5 @@ DT::datatable(result$drugExposureDurationOverall,
 )
 
 ## ----eval=FALSE---------------------------------------------------------------
-#  DT::datatable(result$drugExposureDurationByConcept, rownames = FALSE)
+# DT::datatable(result$drugExposureDurationByConcept, rownames = FALSE)
 

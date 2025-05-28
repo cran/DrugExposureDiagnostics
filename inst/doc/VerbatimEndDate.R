@@ -21,5 +21,5 @@ DT::datatable(result$drugVerbatimEndDate,
 )
 
 ## ----eval=FALSE---------------------------------------------------------------
-#  DT::datatable(result$drugVerbatimEndDateByConcept, rownames = FALSE)
+# DT::datatable(result$drugVerbatimEndDateByConcept, rownames = FALSE)
 

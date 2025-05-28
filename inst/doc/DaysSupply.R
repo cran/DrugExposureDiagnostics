@@ -21,5 +21,5 @@ DT::datatable(result$drugDaysSupply,
 )
 
 ## ----eval=FALSE---------------------------------------------------------------
-#  DT::datatable(result$drugDaysSupplyByConcept, rownames = FALSE)
+# DT::datatable(result$drugDaysSupplyByConcept, rownames = FALSE)
 

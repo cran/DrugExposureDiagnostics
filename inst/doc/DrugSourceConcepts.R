@@ -16,5 +16,5 @@ result <- executeChecks(
 )
 
 ## ----eval=FALSE---------------------------------------------------------------
-#  DT::datatable(result$drugSourceConceptsOverall, rownames = FALSE)
+# DT::datatable(result$drugSourceConceptsOverall, rownames = FALSE)
 

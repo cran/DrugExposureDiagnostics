@@ -21,5 +21,5 @@ DT::datatable(result$drugTypesOverall,
 )
 
 ## ----eval=FALSE---------------------------------------------------------------
-#  DT::datatable(result$drugTypesByConcept, rownames = FALSE)
+# DT::datatable(result$drugTypesByConcept, rownames = FALSE)
 

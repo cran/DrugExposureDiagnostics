@@ -17,7 +17,7 @@ all_checks <- executeChecks(cdm,
   subsetToConceptId = NULL,
   checks = c(
     "missing", "exposureDuration", "type", "route", "sourceConcept", "daysSupply",
-    "verbatimEndDate", "dose", "sig", "quantity", "diagnosticsSummary"
+    "verbatimEndDate", "dose", "sig", "quantity", "daysBetween", "diagnosticsSummary"
   ),
   minCellCount = 5,
   sample = 10000,
@@ -39,18 +39,18 @@ DT::datatable(all_checks$conceptSummary,
 )
 
 ## ----eval=FALSE---------------------------------------------------------------
-#  writeResultToDisk(all_checks,
-#    databaseId = "your_database",
-#    outputFolder = "output_folder"
-#  )
+# writeResultToDisk(all_checks,
+#   databaseId = "your_database",
+#   outputFolder = "output_folder"
+# )
 
 ## ----eval=FALSE---------------------------------------------------------------
-#  viewResults(
-#    dataFolder = file.path(getwd(), "output_folder"),
-#    makePublishable = TRUE,
-#    publishDir = file.path(getwd(), "MyStudyResultsExplorer"),
-#    overwritePublishDir = TRUE
-#  )
+# viewResults(
+#   dataFolder = file.path(getwd(), "output_folder"),
+#   makePublishable = TRUE,
+#   publishDir = file.path(getwd(), "MyStudyResultsExplorer"),
+#   overwritePublishDir = TRUE
+# )
 
 ## ----echo=FALSE---------------------------------------------------------------
 DBI::dbDisconnect(attr(cdm, "dbcon"), shutdown = TRUE)

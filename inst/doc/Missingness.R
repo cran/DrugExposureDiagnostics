@@ -21,5 +21,5 @@ DT::datatable(result$missingValuesOverall,
 )
 
 ## ----eval=FALSE---------------------------------------------------------------
-#  DT::datatable(result$missingValuesByConcept, rownames = FALSE)
+# DT::datatable(result$missingValuesByConcept, rownames = FALSE)
 
