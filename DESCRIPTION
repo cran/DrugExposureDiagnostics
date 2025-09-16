@@ -1,6 +1,6 @@
 Package: DrugExposureDiagnostics
 Title: Diagnostics for OMOP Common Data Model Drug Records
-Version: 1.1.4
+Version: 1.1.5
 Authors@R: c(
     person("Ger", "Inberg", email = "g.inberg@erasmusmc.nl", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0001-8993-8748")),
@@ -51,7 +51,7 @@ Collate: 'DrugExposureDiagnostics-package.R' 'checkDaysSupply.R'
         'shiny.R' 'shinyApp.R' 'summariseChecks.R' 'utils-pipe.R'
         'utils.R'
 NeedsCompilation: no
-Packaged: 2025-06-16 10:07:31 UTC; ginberg
+Packaged: 2025-09-16 07:23:31 UTC; ginberg
 Author: Ger Inberg [aut, cre] (ORCID: <https://orcid.org/0000-0001-8993-8748>),
   Edward Burn [aut] (ORCID: <https://orcid.org/0000-0002-9286-1128>),
   Theresa Burkard [aut] (ORCID: <https://orcid.org/0000-0003-1313-4473>),
@@ -63,4 +63,4 @@ Author: Ger Inberg [aut, cre] (ORCID: <https://orcid.org/0000-0001-8993-8748>),
   Erasmus MC [cph]
 Maintainer: Ger Inberg <g.inberg@erasmusmc.nl>
 Repository: CRAN
-Date/Publication: 2025-06-16 10:30:02 UTC
+Date/Publication: 2025-09-16 07:50:07 UTC

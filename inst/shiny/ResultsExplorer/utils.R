@@ -20,6 +20,7 @@ loadFile <- function(file, folder, overwrite, i) {
         ))
     } else if (grepl("conceptSummary", file)) {
       data <- data %>%
+        dplyr::select(-dplyr::starts_with("X_")) %>%
         dplyr::mutate(concept_code = as.character(concept_code)) %>%
         dplyr::mutate(valid_start_date = ifelse(class(valid_start_date) == "integer",
           format(as.Date(valid_start_date, origin = "1970-01-01")),
