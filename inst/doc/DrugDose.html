@@ -1146,7 +1146,7 @@ HTMLWidgets.widget({
     };
   },
   renderValue: function(el, data, instance) {
-    if (el.offsetWidth === 0 || el.offsetHeight === 0) {
+    if ((el.offsetWidth === 0 || el.offsetHeight === 0) && data.lazyRender !== false) {
       instance.data = data;
       return;
     }
@@ -2877,72 +2877,72 @@ The result is a “summarised result” because we use the function
 <col width="50%" />
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th align="left">Column</th>
 <th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td align="left">result_id</td>
 <td align="left">Can be used to attach settings.</td>
 </tr>
-<tr>
+<tr class="even">
 <td align="left">cdm_name</td>
 <td align="left">The name of the database.</td>
 </tr>
-<tr>
+<tr class="odd">
 <td align="left">group_name</td>
 <td align="left">Here it is the ingredient_name.</td>
 </tr>
-<tr>
+<tr class="even">
 <td align="left">group_level</td>
 <td align="left">Here it is the ingredient.</td>
 </tr>
-<tr>
+<tr class="odd">
 <td align="left">strata_name</td>
 <td align="left">Possible strata here are overall, unit, unit and route,
 unit and route and pattern_id.</td>
 </tr>
-<tr>
+<tr class="even">
 <td align="left">strata_level</td>
 <td align="left">The strata_level gives the names of the strata_name
 items.</td>
 </tr>
-<tr>
+<tr class="odd">
 <td align="left">variable_name</td>
 <td align="left">The name of variable for which the estimates were
 output.</td>
 </tr>
-<tr>
+<tr class="even">
 <td align="left">variable_level</td>
 <td align="left">Further stratification are possible and would be
 depicted here but are not applied for the dailyDoseCoverage
 function.</td>
 </tr>
-<tr>
+<tr class="odd">
 <td align="left">estimate_name</td>
 <td align="left">Says which estimate was output.</td>
 </tr>
-<tr>
+<tr class="even">
 <td align="left">estimate_type</td>
 <td align="left">Gives the variable type of the estimate.</td>
 </tr>
-<tr>
+<tr class="odd">
 <td align="left">estimate_value</td>
 <td align="left">Shows the estimated value.</td>
 </tr>
-<tr>
+<tr class="even">
 <td align="left">additional_name</td>
 <td align="left">Additional information could be stored here, but just
 says “overall”.</td>
 </tr>
-<tr>
+<tr class="odd">
 <td align="left">additional_level</td>
 <td align="left">Additional information could be stored here, but just
 says “overall”.</td>
 </tr>
-<tr>
+<tr class="even">
 <td align="left">pattern_name</td>
 <td align="left">The pattern name contains the information of the level
 of detail as follows: “overall” is the overall dose estimation (beware
@@ -2970,11 +2970,11 @@ concentration or time based drugs). More information on drug strength
 patterns can be found in the paper on how to estimate daily dose in OMOP
 CDM. <a href="https://doi.org/10.1002/pds.5809" class="uri">https://doi.org/10.1002/pds.5809</a></td>
 </tr>
-<tr>
+<tr class="odd">
 <td align="left">ingredient_concept_id</td>
 <td align="left">Concept ID of ingredient.</td>
 </tr>
-<tr>
+<tr class="even">
 <td align="left">ingredient</td>
 <td align="left">Name of drug ingredient.</td>
 </tr>

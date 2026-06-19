@@ -9,6 +9,19 @@ knitr::opts_chunk$set(
 library(DrugExposureDiagnostics)
 
 ## -----------------------------------------------------------------------------
+# conn <- DBI::dbConnect(
+#  RPostgres::Postgres(),
+#  dbname = dbname,
+#  port = port,
+#  host = host,
+#  user = user,
+#  password = password,
+#  bigint = c("numeric")
+# )
+# cdm <- CDMConnector::cdmFromCon(
+#   con = conn,
+#   cdmSchema = "cdm schema name"
+# )
 cdm <- mockDrugExposure()
 
 ## ----executeChecks------------------------------------------------------------
