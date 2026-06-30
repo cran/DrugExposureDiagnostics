@@ -1,6 +1,6 @@
-a51f6adadceb51912e28c91ac309178c *DESCRIPTION
+e75bf988562798595061384a416e2d48 *DESCRIPTION
 faa36263822ae4a75309d4d65d0d809f *NAMESPACE
-5d4167e1a6cde80f5530597cabec401c *NEWS.md
+b84390232c30e1b67fe685b903cced2a *NEWS.md
 2ffd3b737eff16f624c70ad6e1f411ed *R/DrugExposureDiagnostics-package.R
 65c938fbdc239989c2428ea2b2669bc8 *R/checkDaysSupply.R
 353961e085d59727183bf631912d9dcc *R/checkDrugDose.R
@@ -14,13 +14,13 @@ b89fc6954affc4cbc4c81e26a8011c4b *R/checkDrugType.R
 606c1947ea2a81d9d6393a1907a62be9 *R/checkTimeBetween.R
 6f69c80bb91269d64d4da19363d09472 *R/checkVerbatimEndDate.R
 ed43acd3b60770f94eaa1588dc8e0092 *R/dataPlotPanel.R
-95dee5fbb6e5692efafe0c74530a53db *R/executeChecks.R
+64f09adb95c94d76ceb471e7b125d544 *R/executeChecks.R
 ad9adeaf1dd96b253eea9f3db4551b16 *R/getDrugRecords.R
 7c76c70e6ba39a678767903bfff87cbd *R/globals.R
 71bd6c085ef98aa5db0b2d7d9f34a867 *R/ingredientDescendantsInDb.R
 1181b3b786c7129820f1095c7b642cf8 *R/metaDataPanel.R
 4d51f5adf8b10560fd624465fefdcaf9 *R/mockDrugExposure.R
-75af063fad8eac6692f3f86c5cae5ade *R/obscureCounts.R
+c6b25b81c7a99cef528e50d608076371 *R/obscureCounts.R
 65c2048a5a9bc287bc0f97d3f2d514cc *R/runBenchmark.R
 ac00148d777bd607410b1caa68b69efe *R/shiny.R
 aca576bffcfd0ae402e13bda3efc3909 *R/shinyApp.R
@@ -44,7 +44,7 @@ d4cf527656a9c2a9e0ca0768cc130909 *inst/doc/DrugDose.html
 26d3bf04962d724e9f5ca89134dca1ce *inst/doc/DrugDuration.html
 51ad521dcf34fbee3709fc40906f2100 *inst/doc/DrugSig.R
 c30c1dc04de79b919222514b32f8407a *inst/doc/DrugSig.Rmd
-58614f1e29b629f13b577449d42c0b58 *inst/doc/DrugSig.html
+bb5223ed2a273551f17c71407bbd70b4 *inst/doc/DrugSig.html
 3e0419be540ad29fd644b6bd0db4eb93 *inst/doc/DrugSourceConcepts.R
 5748427305fdea9622c3901457ea5e20 *inst/doc/DrugSourceConcepts.Rmd
 9937f6b180ce2615b8fce8fe9aed67e4 *inst/doc/DrugSourceConcepts.html
@@ -53,7 +53,7 @@ d62c628f8062ef42875da67e8b1d991f *inst/doc/DrugTypes.Rmd
 bbb81bd0666bcb58a62872a6c12bf50f *inst/doc/DrugTypes.html
 c0896dbd0c89cdfcf905a8f8a56a9ad3 *inst/doc/IntroductionToDrugExposureDiagnostics.R
 864a87d59880554031417faa9711c291 *inst/doc/IntroductionToDrugExposureDiagnostics.Rmd
-47c27a528f06658a9db0747b80f1fa7d *inst/doc/IntroductionToDrugExposureDiagnostics.html
+027abec9eef066b756e5cfb675390080 *inst/doc/IntroductionToDrugExposureDiagnostics.html
 066fb03c097979ea11cdb2fd57b19113 *inst/doc/Missingness.R
 aa88e23b313fb059784b9635e8b4f8e3 *inst/doc/Missingness.Rmd
 5fa974ffb8c432f82dde8c7f42099bff *inst/doc/Missingness.html
@@ -65,7 +65,7 @@ c10a7733d8d4189a86578ea560dcbf62 *inst/doc/Routes.Rmd
 abd80c98946497c10427a3d6c88e14ac *inst/doc/Routes.html
 d0a6d283b19dfbe664b0efa69eef422c *inst/doc/VerbatimEndDate.R
 b6991306d232b2710ba588be6989033b *inst/doc/VerbatimEndDate.Rmd
-93dbeda873564fa9b21f8d51a14a050b *inst/doc/VerbatimEndDate.html
+e17c9580d2b5e13875d869ac0a34659d *inst/doc/VerbatimEndDate.html
 c23c4c6175017287556e73a65fde4083 *inst/shiny/ResultsExplorer/DrugExposureDiagnosticsShiny.Rproj
 c23d9a36220b0088f9d6a6cf8c4412b8 *inst/shiny/ResultsExplorer/README.md
 12fee37f7e78c515423e3b682813bdca *inst/shiny/ResultsExplorer/SaveRDS.R
@@ -92,7 +92,7 @@ a18130a00ec10436b39464e9bac436d3 *man/checkTableExists.Rd
 d94852058a71a8e6b71f8f03328f0980 *man/checkVerbatimEndDate.Rd
 4a2806aedffc36ff80ed13d9730b51ca *man/computeDBQuery.Rd
 887c75d7f095b065885e33ec37b6ed05 *man/dataPlotPanel.Rd
-37148a0c629ace41586e8f8b1f3b0176 *man/executeChecks.Rd
+dea6ee0caac58d3f8c5702369976ecbe *man/executeChecks.Rd
 fb68f1b458336a72fe9a2b7358200151 *man/executeChecksSingleIngredient.Rd
 5e1b41525fe8c3032037ffcfdd78832b *man/figures/DrugExposureDiagnostics.png
 285b034d0446e0bc358b70bdfa99ee4c *man/getAllCheckOptions.Rd
@@ -127,10 +127,10 @@ cf5277f3883334e9b6da2e63e5664049 *tests/testthat/helper-ableToRun.R
 7f2e7decf59184081e264bd7e644cba1 *tests/testthat/test-CheckVerbatimEndDate.R
 4580e6acdabe7891d397554a8f81572b *tests/testthat/test-GetDrugRecords.R
 8a66ca8f354cd7ebb352c12551a9e417 *tests/testthat/test-MockDrugExposure.R
-ac7af0d9390b5940856e2dff88d290d1 *tests/testthat/test-ObscureCounts.R
+7a237a2e0b690075dd6838e7f6dbaccc *tests/testthat/test-ObscureCounts.R
 378d9392d1f525eaf07475ea220c03e0 *tests/testthat/test-ShinyApp.R
 6fb4f774ed16e94a1c64eda18cccd900 *tests/testthat/test-SummariseChecks.R
-f58ecd82fe9b1c09fb95b9a23019713e *tests/testthat/test-SyntheaSqlServer.R
+b6642631b00390550cd3ba15aceef6cc *tests/testthat/test-SyntheaSqlServer.R
 03950d593ce52dc9b8e20cbcffccb379 *tests/testthat/test-checkDaysSupply.R
 ac4fa7ef2a834c1019df6e0695b916e5 *tests/testthat/test-checkDrugDose.R
 50e1101c252c7d9a95ea83fdcdc6a175 *tests/testthat/test-checkDrugExposureDuration.R
@@ -140,7 +140,7 @@ a195906662be11700c760456119a761f *tests/testthat/test-checkDrugRoutes.R
 2f7ea1e053c4b71e82f8585f4cec3c63 *tests/testthat/test-checkDrugSourceConcepts.R
 37eb2cdf1a61b169a5ab1331c9db0880 *tests/testthat/test-checkDrugTypes.R
 e70f62a5c65cbe3754ff7974a810673f *tests/testthat/test-checkTimeBetween.R
-f89374734d83803ae6af083249230f0e *tests/testthat/test-executeChecks.R
+a1d0923cc6c4b5e0b55d858a3d66b257 *tests/testthat/test-executeChecks.R
 19099534d4c44de8a84161461c6ff552 *tests/testthat/test-runBenchmark.R
 6470fa43d61c0f388d0aa0f5ad5d16f8 *tests/testthat/test-shiny.R
 058207ee3a79d44ea4a09e523970e80a *tests/testthat/test-utils.R
