@@ -1,6 +1,6 @@
-93a55dda14a6284ea6f397455700b5c9 *DESCRIPTION
+9f5aea2a890fefabcdb62a56d42c1391 *DESCRIPTION
 5faa521b5f65cddea9983dd5d07be3ef *NAMESPACE
-debd44a33b5c6af746409cf69cf5fdb8 *NEWS.md
+a5232081deed0c62ea4af07f6d7f85b9 *NEWS.md
 e39b079ae2e9dd3a7aa9638499cb19be *R/DrugExposureDiagnostics-package.R
 65c938fbdc239989c2428ea2b2669bc8 *R/checkDaysSupply.R
 353961e085d59727183bf631912d9dcc *R/checkDrugDose.R
@@ -28,7 +28,7 @@ e15954026714274ed0c4c404c6057255 *R/shinyModule.R
 eaa06c2beebc0b26928a50abc4a7a1eb *R/summariseChecks.R
 b56ff2b193ecba52f9ec7f3b10cca008 *R/utils-pipe.R
 89283cb800cbcc76a746073e03bffe06 *R/utils.R
-04b74e033f52c344359244eb27f87ed3 *README.md
+7348fa1188285d5d9d98e78da86535da *README.md
 2f7ab321f4abc06245e4cb530498ea43 *build/vignette.rds
 7fc90a5921e205de10eb0b394b7662ae *inst/doc/DaysSupply.R
 e4bd7f87eb8e971b63e7059595c1e3f1 *inst/doc/DaysSupply.Rmd
@@ -56,7 +56,7 @@ d62c628f8062ef42875da67e8b1d991f *inst/doc/DrugTypes.Rmd
 bbb81bd0666bcb58a62872a6c12bf50f *inst/doc/DrugTypes.html
 c0896dbd0c89cdfcf905a8f8a56a9ad3 *inst/doc/IntroductionToDrugExposureDiagnostics.R
 018742ed6ef91cbdbfe1293a952678c7 *inst/doc/IntroductionToDrugExposureDiagnostics.Rmd
-a83e0e35e6f7bbfcbdccbaa6af8ce9c8 *inst/doc/IntroductionToDrugExposureDiagnostics.html
+e624023b4c3a8f9b9b2c23c4f56dc55d *inst/doc/IntroductionToDrugExposureDiagnostics.html
 066fb03c097979ea11cdb2fd57b19113 *inst/doc/Missingness.R
 aa88e23b313fb059784b9635e8b4f8e3 *inst/doc/Missingness.Rmd
 5fa974ffb8c432f82dde8c7f42099bff *inst/doc/Missingness.html
@@ -140,7 +140,7 @@ ac4fa7ef2a834c1019df6e0695b916e5 *tests/testthat/test-checkDrugDose.R
 50e1101c252c7d9a95ea83fdcdc6a175 *tests/testthat/test-checkDrugExposureDuration.R
 0eb1400917a464b2777ed120cec02a23 *tests/testthat/test-checkDrugMissings.R
 2d7faf52fe47e459d98b24e735ea0a86 *tests/testthat/test-checkDrugQuantity.R
-a195906662be11700c760456119a761f *tests/testthat/test-checkDrugRoutes.R
+6c0f61df85a3a3c2ed642843e8cbf907 *tests/testthat/test-checkDrugRoutes.R
 2f7ea1e053c4b71e82f8585f4cec3c63 *tests/testthat/test-checkDrugSourceConcepts.R
 37eb2cdf1a61b169a5ab1331c9db0880 *tests/testthat/test-checkDrugTypes.R
 56e0c7fbbe573fca7e2e93da5041221a *tests/testthat/test-checkTimeBetween.R

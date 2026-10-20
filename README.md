@@ -34,12 +34,15 @@ remotes::install_github("darwin-eu/DrugExposureDiagnostics")
 
 ``` r
 citation("DrugExposureDiagnostics")
+citation("DrugExposureDiagnostics")
 #> To cite package 'DrugExposureDiagnostics' in publications use:
 #> 
 #>   Inberg G, Burn E, Burkard T (2026). _DrugExposureDiagnostics:
-#>   Diagnostics for OMOP Common Data Model Drug Records_. R package
-#>   version 1.1.7, commit a2252b98a38603ab7c8342d3a91bd25a13ecf65b,
-#>   <https://github.com/darwin-eu/DrugExposureDiagnostics>.
+#>   Diagnostics for OMOP Common Data Model Drug Records_.
+#>   doi:10.32614/CRAN.package.DrugExposureDiagnostics
+#>   <https://doi.org/10.32614/CRAN.package.DrugExposureDiagnostics>. R
+#>   package version 1.2.0,
+#>   <https://CRAN.R-project.org/package=DrugExposureDiagnostics>.
 #> 
 #> A BibTeX entry for LaTeX users is
 #> 
@@ -47,8 +50,9 @@ citation("DrugExposureDiagnostics")
 #>     title = {DrugExposureDiagnostics: Diagnostics for OMOP Common Data Model Drug Records},
 #>     author = {Ger Inberg and Edward Burn and Theresa Burkard},
 #>     year = {2026},
-#>     note = {R package version 1.1.7, commit a2252b98a38603ab7c8342d3a91bd25a13ecf65b},
-#>     url = {https://github.com/darwin-eu/DrugExposureDiagnostics},
+#>     note = {R package version 1.2.0},
+#>     url = {https://CRAN.R-project.org/package=DrugExposureDiagnostics},
+#>     doi = {10.32614/CRAN.package.DrugExposureDiagnostics},
 #>   }
 ```
 
@@ -108,9 +112,9 @@ all_checks <- executeChecks(
 #>   q75, q95, min, max
 #> ! Table is collected to memory as not all requested estimates are supported on
 #>   the database side
-#> → Start summary of data, at 2026-06-18 09:51:45.790348
+#> → Start summary of data, at 2026-09-29 09:09:10.857106
 #> 
-#> ✔ Summary finished, at 2026-06-18 09:51:45.995946
+#> ✔ Summary finished, at 2026-09-29 09:09:11.089543
 ```
 
 The output is a list which contains the following set of tibbles:
@@ -138,27 +142,27 @@ glimpse(all_checks$conceptSummary)
 #> Rows: 6
 #> Columns: 26
 #> Rowwise: 
-#> $ drug_concept_id             <int> 40162522, 1127078, 40229134, 1127433, 4023…
-#> $ drug                        <chr> "acetaminophen 325 MG Oral Tablet", "aceta…
+#> $ drug_concept_id             <int> 1127433, 1127078, 40229134, 40162522, 4023…
+#> $ drug                        <chr> "acetaminophen 325 MG / Oxycodone Hydrochl…
 #> $ ingredient_concept_id       <int> 1125315, 1125315, 1125315, 1125315, 112531…
 #> $ ingredient                  <chr> "acetaminophen", "acetaminophen", "acetami…
-#> $ n_records                   <int> 18, 19, 12, 13, 10, 14
-#> $ n_patients                  <int> 15, 13, 11, 11, 9, 13
+#> $ n_records                   <int> 13, 19, 12, 18, 10, 14
+#> $ n_patients                  <int> 11, 13, 11, 15, 9, 13
 #> $ domain_id                   <chr> "Drug", "Drug", "Drug", "Drug", "Drug", "D…
 #> $ vocabulary_id               <chr> "RxNorm", "RxNorm", "RxNorm", "RxNorm", "R…
 #> $ concept_class_id            <chr> "Clinical Drug", "Clinical Drug", "Clinica…
 #> $ standard_concept            <chr> "S", "S", "S", "S", "S", "S"
-#> $ concept_code                <chr> "313782", "833036", "1043400", "1049221", …
+#> $ concept_code                <chr> "1049221", "833036", "1043400", "313782", …
 #> $ valid_start_date            <date> 1970-01-01, 1970-01-01, 1970-01-01, 1970-0…
 #> $ valid_end_date              <date> 2099-12-31, 2099-12-31, 2099-12-31, 2099-1…
 #> $ invalid_reason              <chr> NA, NA, NA, NA, NA, NA
-#> $ amount_value                <dbl> 300, NA, 300, 100, 200, 100
-#> $ amount_unit_concept_id      <int> 8576, NA, 8576, 8576, 8576, 8576
-#> $ numerator_value             <dbl> NA, 3, NA, NA, NA, NA
-#> $ numerator_unit_concept_id   <int> NA, 8576, NA, NA, NA, NA
+#> $ amount_value                <dbl> NA, 100, 300, NA, 200, NA
+#> $ amount_unit_concept_id      <int> NA, 8587, 8587, NA, 8587, NA
+#> $ numerator_value             <dbl> 2, NA, NA, 2, NA, 2
+#> $ numerator_unit_concept_id   <int> 8587, NA, NA, 8587, NA, 8587
 #> $ numerator_unit              <chr> NA, NA, NA, NA, NA, NA
-#> $ denominator_value           <dbl> NA, 1, NA, NA, NA, NA
-#> $ denominator_unit_concept_id <int> NA, 8576, NA, NA, NA, NA
+#> $ denominator_value           <dbl> 1, NA, NA, 1, NA, 1
+#> $ denominator_unit_concept_id <int> 8587, NA, NA, 8587, NA, 8587
 #> $ denominator_unit            <chr> NA, NA, NA, NA, NA, NA
 #> $ box_size                    <dbl> 0, 0, 0, 0, 0, 0
 #> $ amount_unit                 <chr> NA, NA, NA, NA, NA, NA
@@ -170,10 +174,10 @@ all_checks$conceptSummary %>%
 #> # Rowwise: 
 #>   drug_concept_id drug                                          
 #>             <int> <chr>                                         
-#> 1        40162522 acetaminophen 325 MG Oral Tablet              
+#> 1         1127433 acetaminophen 325 MG / Oxycodone Hydrochloride
 #> 2         1127078 acetaminophen 750 MG / Hydrocodone Bitartrate 
 #> 3        40229134 acetaminophen 21.7 MG/ML / Dextromethorphan   
-#> 4         1127433 acetaminophen 325 MG / Oxycodone Hydrochloride
+#> 4        40162522 acetaminophen 325 MG Oral Tablet              
 #> 5        40231925 acetaminophen 325 MG / Hydrocodone Bitartrate 
 #> 6        19133768 acetaminophen 160 MG Oral Tablet
 ```
